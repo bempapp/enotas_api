@@ -8,7 +8,7 @@ RSpec.describe EnotasApi::Configuration do
   let(:api_key) { 'test-api-key' }
 
   it 'its mandatory to configure' do
-    expect { current }.to raise_error(RuntimeError, /necessary to configure EnotasApi/)
+    expect { current }.to raise_error(EnotasApi::Error, /necessary to configure EnotasApi/)
   end
 
   describe '#api_key' do

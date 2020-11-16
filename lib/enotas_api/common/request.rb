@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'result'
 require_relative '../support/encoding_helper'
 require_relative '../support/filterable'
 require_relative '../support/paginable'
@@ -26,7 +27,7 @@ module EnotasApi
       code, content = case method
                       when :GET then configuration.request_provider.get(to_url)
                       when :POST then configuration.request_provider.post(to_url, to_json)
-                      else raise "Invalid method #{@method}"
+                      else raise EnotasApi::Error, "Invalid method #{@method}"
                       end
 
       result_object.new(code, content)
@@ -34,7 +35,7 @@ module EnotasApi
 
     def call!
       result = call
-      raise "[Request][ERROR] Status:#{result.status_code}\n#{result.to_json}" if result.error?
+      raise EnotasApi::Error, "[Request][ERROR] Status:#{result.status_code}\n#{result.to_json}" if result.error?
 
       result
     end

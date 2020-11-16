@@ -34,7 +34,7 @@ module EnotasApi
 
     module ClassMethods
       def attribute(name, type)
-        raise "Type #{type} not supported" unless EnotasApi::ConversionHelper.support_type?(type)
+        raise EnotasApi::Error, "Type #{type} not supported" unless EnotasApi::ConversionHelper.support_type?(type)
 
         (@attributes ||= {})[name] = type
 

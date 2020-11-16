@@ -2,6 +2,7 @@
 
 require 'singleton'
 require 'logger'
+require_relative 'request_provider'
 
 module EnotasApi
   class Configuration
@@ -17,7 +18,7 @@ module EnotasApi
     end
 
     def self.current
-      raise NO_CONFIGURATION_ERROR unless instance.configured
+      raise EnotasApi::Error, NO_CONFIGURATION_ERROR unless instance.configured
 
       instance
     end

@@ -9,7 +9,7 @@ module EnotasApi
     module ClassMethods
       def searchable(fields)
         define_method :search do |field, value|
-          raise "Unsupported search field '#{field}'" unless fields.include?(field)
+          raise EnotasApi::Error, "Unsupported search field '#{field}'" unless fields.include?(field)
 
           param(:searchBy, field).param(:searchTerm, value)
         end

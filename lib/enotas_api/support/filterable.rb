@@ -15,7 +15,7 @@ module EnotasApi
       def filterable(field, type)
         handler = FILTER_HANDLERS[type]
 
-        raise "Undefined filter type '#{type}', valid values are #{FILTER_HANDLERS.keys}" unless handler
+        raise EnotasApi::Error, "Undefined filter type '#{type}', valid values are #{FILTER_HANDLERS.keys}" unless handler
 
         define_method "#{field}_#{type}" do |value|
           param(:filter, handler.call(field, value))
