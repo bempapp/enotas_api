@@ -1,0 +1,22 @@
+require: rubocop-rspec
+
+AllCops:
+  Exclude:
+    - sample.rb
+  NewCops: enable
+  UseCache: true
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+Metrics/LineLength:
+  Max: 150
+Naming/MethodParameterName:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 15
+RSpec/FilePath:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
