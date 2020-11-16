@@ -1,30 +1,32 @@
-# EnotasApi
+# EnotasApi (WORK IN PROGRESS)
+*enotas_api* é um cliente ruby para a [API](https://docs.enotasgw.com.br/reference) do [e-notas](https://enotas.com.br/).
 
-## Installation
+Não oficial, porém com design simples e suportada com carinho por [@salaozen](https://github.com/salaozen).
+## English Readers
+*enotas_api* is a ruby api client for [e-notas](https://enotas.com.br/) [API](https://docs.enotasgw.com.br/reference).
 
-Add this line to your application's Gemfile:
+Non oficial, but well supported with love by [@salaozen](https://github.com/salaozen).
+
+Because e-notas api is entire in portuguese, the code and documentation from here will also be. Sorry about that. :D
+
+## Instalação
+
+Adicione ao seu Gemfile
 
 ```ruby
 gem 'enotas_api'
 ```
 
-And then execute:
+E então execute:
 
     $ bundle install
 
-Or install it yourself as:
+Ou instale você mesmo com:
 
     $ gem install enotas_api
 
-## Usage
+## Utilização
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
