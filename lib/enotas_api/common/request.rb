@@ -26,7 +26,7 @@ module EnotasApi
     def call
       code, content = case method
                       when :GET then configuration.request_provider.get(to_url)
-                      when :POST then configuration.request_provider.post(to_url, to_json)
+                      # when :POST then configuration.request_provider.post(to_url, to_json)
                       else raise EnotasApi::Error, "Invalid method #{@method}"
                       end
 
