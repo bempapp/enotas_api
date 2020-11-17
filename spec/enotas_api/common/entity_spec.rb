@@ -43,32 +43,6 @@ RSpec.describe EnotasApi::Entity do
       expect(instance.boolean_attr).to be false
     end
 
-    it 'convert string type to integer' do
-      value = '999'
-      instance.integer_attr = value
-      expect(instance.integer_attr).to eq(999)
-      expect(instance.integer_attr.class).to eq(Integer)
-    end
-
-    it 'convert string type to decimal' do
-      value = '999.99'
-      instance.decimal_attr = value
-      expect(instance.decimal_attr).to eq(999.99)
-      expect(instance.decimal_attr.class).to eq(Float)
-    end
-
-    it 'convert string type to boolean' do
-      value = 'true'
-      instance.boolean_attr = value
-      expect(instance.boolean_attr).to be true
-    end
-
-    it 'convert string type to boolean as falsy' do
-      value = 'false'
-      instance.boolean_attr = value
-      expect(instance.boolean_attr).to be false
-    end
-
     describe '#attributes' do
       it 'retrieves attributes' do
         expect(instance.class.attributes).to eq({

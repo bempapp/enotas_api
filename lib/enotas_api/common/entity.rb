@@ -1,19 +1,11 @@
 # frozen_string_literal: true
 
 require 'json'
-require_relative '../support/dynamic_attributes'
+require_relative '../support/attributable'
 
 module EnotasApi
   class Entity
-    include EnotasApi::DynamicAttributes
-
-    def apply_json(json)
-      json.each_pair do |field, value|
-        setter = "#{field}="
-        send(setter, value) if respond_to?(setter)
-      end
-      self
-    end
+    include EnotasApi::Attributable
 
     def as_json(_options = {})
       self.class.attributes
