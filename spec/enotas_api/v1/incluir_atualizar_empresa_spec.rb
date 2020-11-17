@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe EnotasApi::V1::IncluirAtualizarEmpresa do
-  let(:empresa) { EnotasApi::Empresa.new({ id: '123' }) }
+  let(:empresa) { EnotasApi::V1::Empresa.new({ id: '123' }) }
   let(:instance) { described_class.new(empresa) }
 
   it 'have expected uri' do
