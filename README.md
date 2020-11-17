@@ -82,16 +82,15 @@ EnotasApi::V1::ConsultarServicosMunicipais.new(uf, nome_cidade)
 EnotasApi::V1::ListarEmpresas.new
 ```
 
-
 ## Endpoints suportados (marcados com X) e em desenvolvimento (sem marcação)
 API - NFS-e (V1) - [Documentação](https://docs.enotasgw.com.br/reference)
 - [x] Empresa: Consultar Empresa
 - [x] Empresa: Listar Empresas
-- [ ] Empresa: Incluir / Atualizar Empresa
+- [x] Empresa: Incluir / Atualizar Empresa
 - [ ] Empresa: Vincular Certificado
 - [ ] Empresa: Vincular Logotipo
-- [ ] Empresa: Desabilitar Empresa
-- [ ] Empresa: Habilitar Empresa
+- [x] Empresa: Desabilitar Empresa
+- [x] Empresa: Habilitar Empresa
 - [x] NFS-E: Listar Notas Fiscais
 - [x] NFS-E: Consultar pelo ID do Gateway
 - [x] NFS-E: Consultar pelo Id Externo
