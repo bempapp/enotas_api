@@ -17,7 +17,7 @@ module EnotasApi
     end
 
     def attribute_changed?(attribute)
-      attributes_changed.includes?(attribute)
+      attributes_changed.include?(attribute)
     end
 
     def set(attributes)

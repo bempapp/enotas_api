@@ -9,13 +9,7 @@ module EnotasApi
       filterable :descricao, :contains
 
       def initialize(uf, nome_cidade)
-        @uf = uf
-        @nome_cidade = nome_cidade
-        super()
-      end
-
-      def uri
-        "/v1/estados/#{url_encode(@uf)}/cidades/#{url_encode(@nome_cidade)}/servicos"
+        super(uri: "/v1/estados/#{url_encode(uf)}/cidades/#{url_encode(nome_cidade)}/servicos")
       end
     end
   end

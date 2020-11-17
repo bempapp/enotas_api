@@ -8,8 +8,8 @@ class TestGetRequest < EnotasApi::Request
   searchable [:field1]
   sortable [:field1]
 
-  def uri
-    '/test_uri'
+  def initialize
+    super(uri: '/test_uri')
   end
 end
 

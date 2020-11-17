@@ -7,8 +7,8 @@ module EnotasApi
     class ConsultarCidadesServicioMunicipalUnificado < EnotasApi::Request
       paginable
 
-      def uri
-        '/v1/servicos/cidades'
+      def initialize
+        super(uri: '/v1/servicos/cidades')
       end
     end
   end

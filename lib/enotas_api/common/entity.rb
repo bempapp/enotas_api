@@ -17,7 +17,7 @@ module EnotasApi
 
     def as_json(_options = {})
       self.class.attributes
-          .map { |att| [att, try(att)] }
+          .keys.map { |att| [att, send(att)] }
           .select { |e| !e[1].nil? || attribute_changed?(e[0]) }
           .to_h
     end

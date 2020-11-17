@@ -10,12 +10,7 @@ module EnotasApi
       sortable %i[data_criacao]
 
       def initialize(empresa_id)
-        @empresa_id = empresa_id
-        super()
-      end
-
-      def uri
-        "/v1/empresas/#{url_encode(@empresa_id)}/nfes"
+        super(uri: "/v1/empresas/#{url_encode(empresa_id)}/nfes")
       end
     end
   end

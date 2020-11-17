@@ -6,12 +6,7 @@ module EnotasApi
   module V1
     class ConsultarEmpresa < EnotasApi::Request
       def initialize(id)
-        @id = id
-        super()
-      end
-
-      def uri
-        "/v1/empresas/#{url_encode(@id)}"
+        super(uri: "/v1/empresas/#{url_encode(id)}")
       end
     end
   end

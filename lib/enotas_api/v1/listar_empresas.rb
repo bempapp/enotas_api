@@ -9,8 +9,8 @@ module EnotasApi
       searchable %i[nome_fantasia razao_social]
       sortable %i[nome_fantasia razao_social cidade data_criacao data_ultima_modificacao]
 
-      def uri
-        '/v1/empresas'
+      def initialize
+        super(uri: '/v1/empresas')
       end
     end
   end
