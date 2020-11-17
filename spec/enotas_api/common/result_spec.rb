@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'json'
 require 'spec_helper'
 
 RSpec.describe EnotasApi::Result do

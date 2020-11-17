@@ -13,12 +13,24 @@ class TestGetRequest < EnotasApi::Request
   end
 end
 
+class TestPostRequest < EnotasApi::Request
+  paginable
+  filterable :field1, :contains
+  searchable [:field1]
+  sortable [:field1]
+
+  def initialize
+    super(uri: '/test_uri', method: :POST, body: 'request_body')
+  end
+end
+
 class CustomResult
   def initialize(_code, _body); end
 end
 
 RSpec.describe EnotasApi::Request do
   let(:get_request) { TestGetRequest.new }
+  let(:post_request) { TestPostRequest.new }
   let(:url) { 'base_url/test_uri?pageNumber=0&pageSize=150' }
   let(:body) { { json: true }.to_json.to_s }
 
@@ -52,6 +64,15 @@ RSpec.describe EnotasApi::Request do
       result = get_request.call
 
       expect(result.class).to eq(CustomResult)
+    end
+
+    it 'suports post request' do
+      stub_request(:post, url).with(body: /request_body/).to_return(body: body)
+
+      result = post_request.call
+
+      expect(result).to be_truthy
+      expect(result.json).to be true
     end
   end
 

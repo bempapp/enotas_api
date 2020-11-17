@@ -54,7 +54,7 @@ module EnotasApi
     end
 
     def to_json(*_args)
-      @json
+      @body
     end
 
     def param(name, value)

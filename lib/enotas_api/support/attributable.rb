@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'type_handler'
+
 module EnotasApi
   module Attributable
     def self.included(base)
@@ -35,27 +37,16 @@ module EnotasApi
     end
 
     module ClassMethods
-      TYPES = {
-        boolean: ->(value) { value.is_a?(TrueClass) || value.is_a?(FalseClass) },
-        decimal: ->(value) { value.is_a?(Float) || value.is_a?(Integer) },
-        entity: ->(value) { value.is_a?(EnotasApi::Entity) },
-        integer: ->(value) { value.is_a?(Integer) },
-        string: ->(value) { value.is_a?(String) }
-      }.freeze
-
       def attribute(name, type)
-        raise EnotasApi::Error, "Type #{type} not supported" unless TYPES.key?(type) || type < EnotasApi::Entity
+        handler = EnotasApi::TypeHandler.new(type)
 
         (@attributes ||= {})[name] = type
-
         attr_reader name
 
         define_method "#{name}=" do |value|
-          unless value.nil? || TYPES[type].call(value)
-            raise EnotasApi::Error, "Invalid value '#{value}:#{value.class}' for type '#{type}' in field '#{name}'"
-          end
+          handler.validate!(value)
 
-          instance_variable_set("@#{name}", value)
+          instance_variable_set("@#{name}", handler.entity? && value.is_a?(Hash) ? type.new(value) : value)
           (@attributes_changed ||= []) << name
         end
       end
