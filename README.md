@@ -92,9 +92,9 @@ API - NFS-e (V1) - [Documentação](https://docs.enotasgw.com.br/reference)
 - [ ] Empresa: Vincular Logotipo
 - [ ] Empresa: Desabilitar Empresa
 - [ ] Empresa: Habilitar Empresa
-- [ ] NFS-E: Listar Notas Fiscais
-- [ ] NFS-E: Consultar pelo ID do Gateway
-- [ ] NFS-E: Consultar pelo Id Externo
+- [x] NFS-E: Listar Notas Fiscais
+- [x] NFS-E: Consultar pelo ID do Gateway
+- [x] NFS-E: Consultar pelo Id Externo
 - [ ] NFS-E: Download XML
 - [ ] NFS-E: Download XML (IdExterno)
 - [ ] NFS-E: Download PDF

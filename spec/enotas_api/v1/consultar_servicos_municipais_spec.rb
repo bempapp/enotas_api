@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe EnotasApi::V1::ConsultarServicosMunicipais do
   let(:uf) { 'UF' }
   let(:nome_cidade) { 'CIDADE' }
-  let(:instance) { described_class.new(uf, cidade) }
+  let(:instance) { described_class.new(uf, nome_cidade) }
 
   it 'implements uri' do
     expect(instance.uri).to eq("/v1/estados/#{uf}/cidades/#{nome_cidade}/servicos")
@@ -16,6 +16,6 @@ RSpec.describe EnotasApi::V1::ConsultarServicosMunicipais do
   end
 
   it 'allow filter by description' do
-    expect(instance.respond_to?(:description_contains)).to eq true
+    expect(instance.respond_to?(:descricao_contains)).to eq true
   end
 end
