@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe EnotasApi::V1::ConsultarCidadesServicioMunicipalUnificado do
+RSpec.describe EnotasApi::V1::ConsultarCidadesServicoMunicipalUnificado do
   let(:instance) { described_class.new }
 
   it 'implements uri' do

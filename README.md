@@ -73,7 +73,7 @@ result.to_json # = <JSON retornado pela API do e-notas>
 ```ruby
 EnotasApi::V1::ConsultarCaracteristicasPrefeitura.new(codigo_ibge_cidade)
 
-EnotasApi::V1::ConsultarCidadesServicioMunicipalUnificado.new
+EnotasApi::V1::ConsultarCidadesServicoMunicipalUnificado.new
 
 EnotasApi::V1::ConsultarEmpresa.new(id)
 

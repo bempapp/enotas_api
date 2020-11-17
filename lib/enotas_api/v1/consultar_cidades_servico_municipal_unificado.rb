@@ -4,7 +4,7 @@ require_relative '../common/request'
 
 module EnotasApi
   module V1
-    class ConsultarCidadesServicioMunicipalUnificado < EnotasApi::Request
+    class ConsultarCidadesServicoMunicipalUnificado < EnotasApi::Request
       paginable
 
       def initialize
