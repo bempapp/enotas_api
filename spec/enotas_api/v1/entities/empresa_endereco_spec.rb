@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe EnotasApi::V1::Endereco do
+RSpec.describe EnotasApi::V1::EmpresaEndereco do
   let(:data) do
     { codigoIbgeUf: 999, codigoIbgeCidade: 999, pais: 'Country', uf: 'State', cidade: 'City', logradouro: 'Street',
       numero: 'Number', complemento: 'Additional Info', bairro: 'Neighborhood', cep: 'Code' }

@@ -7,7 +7,8 @@ RSpec.describe EnotasApi::V1::Empresa do
     { id: 'id', cnpj: 'cnpj', inscricaoMunicipal: 'inscricaoMunicipal', inscricaoEstadual: 'inscricaoEstadual',
       razaoSocial: 'razaoSocial', nomeFantasia: 'nomeFantasia', optanteSimplesNacional: true, email: 'email',
       telefoneComercial: 'telefoneComercial', incentivadorCultural: false, regimeEspecialTributacao: 'regimeEspecialTributacao',
-      codigoServicoMunicipal: 'codigoServicoMunicipal', cnae: 'cnae', aliquotaIss: 9.99, descricaoServico: 'descricaoServico' }
+      codigoServicoMunicipal: 'codigoServicoMunicipal', cnae: 'cnae', aliquotaIss: 9.99, descricaoServico: 'descricaoServico',
+      endereco: { codigoIbgeUf: 123 }, configuracoesNFSeHomologacao: { sequencialNFe: 1 }, configuracoesNFSeProducao: { sequencialNFe: 1 } }
   end
   let(:instance) { described_class.new(data) }
 

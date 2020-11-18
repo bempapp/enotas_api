@@ -8,6 +8,7 @@
 - Implementado Desabilitar Empresa
 - Implementado Vincular Logotipo de Empresa
 - Implementado Vincular Certificado Digital de Empresa
+- Implementado Emitir NFS-e
 
 # 0.1.0
 - WIP (ainda não disponível para uso em produção)

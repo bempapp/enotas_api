@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../common/entity'
-require_relative 'endereco'
+require_relative 'empresa_endereco'
 require_relative 'empresa_configuracoes'
 
 module EnotasApi
@@ -22,7 +22,7 @@ module EnotasApi
       attribute :cnae, :string
       attribute :aliquotaIss, :decimal
       attribute :descricaoServico, :string
-      attribute :endereco, EnotasApi::V1::Endereco
+      attribute :endereco, EnotasApi::V1::EmpresaEndereco
       attribute :configuracoesNFSeHomologacao, EnotasApi::V1::EmpresaConfiguracoes
       attribute :configuracoesNFSeProducao, EnotasApi::V1::EmpresaConfiguracoes
     end

@@ -87,7 +87,7 @@ result.to_json # = <JSON retornado pela API do e-notas>
     - [ ] Download XML (IdExterno)
     - [ ] Download PDF
     - [ ] Download PDF (IdExterno)
-    - [ ] Emissão de Nota Fiscal
+    - [X] Emissão de Nota Fiscal - `EnotasApi::V1::EmitirNfs`
     - [ ] Cancelar
     - [ ] Cancelar (IdExterno)
   - API Complementar

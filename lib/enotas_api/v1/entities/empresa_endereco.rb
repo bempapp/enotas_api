@@ -4,7 +4,7 @@ require_relative '../../common/entity'
 
 module EnotasApi
   module V1
-    class Endereco < EnotasApi::Entity
+    class EmpresaEndereco < EnotasApi::Entity
       attribute :codigoIbgeUf, :integer
       attribute :codigoIbgeCidade, :integer
       attribute :pais, :string
