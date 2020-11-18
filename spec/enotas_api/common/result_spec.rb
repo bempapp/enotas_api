@@ -35,6 +35,20 @@ RSpec.describe EnotasApi::Result do
     end
   end
 
+  describe 'no json' do
+    it 'not parse nil json' do
+      instance = described_class.new(200, nil)
+
+      expect(instance.success?).to be(true)
+    end
+
+    it 'not parse empty json' do
+      instance = described_class.new(200, '')
+
+      expect(instance.success?).to be(true)
+    end
+  end
+
   describe 'json' do
     let(:json) do
       {

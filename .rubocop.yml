@@ -10,6 +10,8 @@ Metrics/BlockLength:
     - spec/**/*.rb
 Metrics/LineLength:
   Max: 150
+Metrics/MethodLength:
+  Max: 15
 Naming/MethodParameterName:
   Enabled: false
 RSpec/ExampleLength:

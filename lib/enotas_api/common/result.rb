@@ -8,7 +8,7 @@ module EnotasApi
 
     def initialize(status_code, json)
       @status_code = status_code
-      @data = JSON.parse(json)
+      @data = json.nil? || json.empty? ? {} : JSON.parse(json)
       @data = @data.first if @data.is_a?(Array)
     end
 

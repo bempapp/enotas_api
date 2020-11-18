@@ -20,7 +20,14 @@ class TestPostRequest < EnotasApi::Request
   sortable [:field1]
 
   def initialize
-    super(uri: '/test_uri', method: :POST, body: 'request_body')
+    super(uri: '/test_uri', method: :POST, content: 'request_body')
+  end
+end
+
+class TestPostFormRequest < EnotasApi::Request
+  def initialize
+    form_data = { form: 'data' }
+    super(uri: '/test_uri', method: :POST_FORM, content: form_data)
   end
 end
 
@@ -31,6 +38,7 @@ end
 RSpec.describe EnotasApi::Request do
   let(:get_request) { TestGetRequest.new }
   let(:post_request) { TestPostRequest.new }
+  let(:post_form_request) { TestPostFormRequest.new }
   let(:url) { 'base_url/test_uri?pageNumber=0&pageSize=150' }
   let(:body) { { json: true }.to_json.to_s }
 
@@ -70,6 +78,17 @@ RSpec.describe EnotasApi::Request do
       stub_request(:post, url).with(body: /request_body/).to_return(body: body)
 
       result = post_request.call
+
+      expect(result).to be_truthy
+      expect(result.json).to be true
+    end
+
+    it 'supports post_form request' do
+      stub_request(:post, 'base_url/test_uri')
+        .with(headers: { 'Content-Type' => 'multipart/form-data' })
+        .to_return(body: body)
+
+      result = post_form_request.call
 
       expect(result).to be_truthy
       expect(result.json).to be true
@@ -130,6 +149,20 @@ RSpec.describe EnotasApi::Request do
     it 'allow searching' do
       expect(get_request.respond_to?(:search)).to be true
       expect(get_request.respond_to?(:search_by_field1)).to be true
+    end
+  end
+
+  describe '#to_json' do
+    it 'retrieve nil json' do
+      expect(get_request.to_json).to be_nil
+    end
+
+    it 'retrieve content json' do
+      expect(post_request.to_json).to eq('request_body')
+    end
+
+    it 'retrieve form_data json' do
+      expect(post_form_request.to_json).to eq('{"form":"data"}')
     end
   end
 end

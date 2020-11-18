@@ -6,7 +6,7 @@
 - Implementado Incluir/Alterar Empresa
 - Implementado Habilitar Empresa
 - Implementado Desabilitar Empresa
-
+- Implementado Vincular Logotipo de Empresa
 # 0.1.0
 - WIP (ainda não disponível para uso em produção)
 

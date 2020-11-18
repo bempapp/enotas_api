@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'json'
 require_relative 'result'
 require_relative '../support/encoding_helper'
 require_relative '../support/filterable'
@@ -15,12 +16,12 @@ module EnotasApi
     include EnotasApi::Searchable
     include EnotasApi::Sortable
 
-    attr_reader :params, :uri, :body, :method, :result_object
+    attr_reader :params, :uri, :content, :method, :result_object
 
-    def initialize(uri:, method: :GET, body: nil, result_object: EnotasApi::Result)
+    def initialize(uri:, method: :GET, content: nil, result_object: EnotasApi::Result)
       @method = method
       @uri = uri
-      @body = body
+      @content = content
       @result_object = result_object
       @params = {}
       page if respond_to?(:page)
@@ -28,11 +29,7 @@ module EnotasApi
     end
 
     def call
-      code, content = case method
-                      when :GET then configuration.request_provider.get(to_url)
-                      when :POST then configuration.request_provider.post(to_url, to_json)
-                      else raise EnotasApi::Error, "Invalid method '#{method}' for '#{self.class}'"
-                      end
+      code, content = make_request
 
       result_object.new(code, content)
     end
@@ -45,16 +42,18 @@ module EnotasApi
     end
 
     def to_url
-      url = "#{configuration.base_url}#{@uri}"
+      url = "#{base_url}#{uri}"
 
-      query_params = encode_query_params(@params) if @params
+      query_params = encode_query_params(params) if params
       url += "?#{query_params}" unless query_params&.empty?
 
       url
     end
 
-    def to_json(*_args)
-      @body
+    def to_json(options = nil)
+      return nil if content.nil?
+
+      content.is_a?(String) ? content : content.to_json(options)
     end
 
     def param(name, value)
@@ -64,8 +63,21 @@ module EnotasApi
 
     private
 
-    def configuration
-      EnotasApi::Configuration.current
+    def make_request
+      case method
+      when :GET then request_provider.get(to_url)
+      when :POST then request_provider.post(to_url, content)
+      when :POST_FORM then request_provider.post_form(to_url, content)
+      else raise EnotasApi::Error, "Invalid http method '#{method}'"
+      end
+    end
+
+    def base_url
+      EnotasApi::Configuration.current.base_url
+    end
+
+    def request_provider
+      EnotasApi::Configuration.current.request_provider
     end
   end
 end

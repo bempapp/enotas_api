@@ -14,7 +14,7 @@ RSpec.describe EnotasApi::V1::IncluirAtualizarEmpresa do
     expect(instance.method).to eq(:POST)
   end
 
-  it 'have expected body' do
-    expect(instance.body).to eq(empresa.to_json)
+  it 'have expected content' do
+    expect(instance.content).to eq(empresa.to_json)
   end
 end

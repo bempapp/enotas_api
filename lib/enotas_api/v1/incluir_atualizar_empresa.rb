@@ -6,7 +6,7 @@ module EnotasApi
   module V1
     class IncluirAtualizarEmpresa < EnotasApi::Request
       def initialize(empresa)
-        super(method: :POST, uri: '/v1/empresas', body: empresa.to_json)
+        super(method: :POST, uri: '/v1/empresas', content: empresa.to_json)
       end
     end
   end
