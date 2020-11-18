@@ -5,6 +5,8 @@ AllCops:
     - sample.rb
   NewCops: enable
   UseCache: true
+Metrics/AbcSize:
+  Max: 20
 Metrics/BlockLength:
   Exclude:
     - spec/**/*.rb

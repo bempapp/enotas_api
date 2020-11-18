@@ -31,6 +31,12 @@ class TestPostFormRequest < EnotasApi::Request
   end
 end
 
+class TestDeleteRequest < EnotasApi::Request
+  def initialize
+    super(uri: '/delete_uri', method: :DELETE)
+  end
+end
+
 class CustomResult
   def initialize(_code, _body); end
 end
@@ -89,6 +95,15 @@ RSpec.describe EnotasApi::Request do
         .to_return(body: body)
 
       result = post_form_request.call
+
+      expect(result).to be_truthy
+      expect(result.json).to be true
+    end
+
+    it 'supports delete request' do
+      stub_request(:delete, 'base_url/delete_uri').to_return(body: body)
+
+      result = TestDeleteRequest.new.call
 
       expect(result).to be_truthy
       expect(result.json).to be true

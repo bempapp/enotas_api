@@ -68,6 +68,7 @@ module EnotasApi
       when :GET then request_provider.get(to_url)
       when :POST then request_provider.post(to_url, content)
       when :POST_FORM then request_provider.post_form(to_url, content)
+      when :DELETE then request_provider.delete(to_url)
       else raise EnotasApi::Error, "Invalid http method '#{method}'"
       end
     end
