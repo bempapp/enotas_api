@@ -83,10 +83,10 @@ result.to_json # = <JSON retornado pela API do e-notas>
     - [x] Listar Notas Fiscais - `EnotasApi::V1::ListarNotasFiscais`
     - [x] Consultar pelo ID do Gateway - `EnotasApi::V1::ConsultarNotaFiscal`
     - [x] Consultar pelo Id Externo - `EnotasApi::V1::ConsultarNotaFiscalIdExterno`
-    - [ ] Download XML
-    - [ ] Download XML (IdExterno)
-    - [ ] Download PDF
-    - [ ] Download PDF (IdExterno)
+    - [x] Download XML - `EnotasApi::V1::BaixarXmlNfs`
+    - [x] Download XML (IdExterno) - `EnotasApi::V1::BaixarXmlNfsIdExterno`
+    - [x] Download PDF - `EnotasApi::V1::BaixarPdfNfs`
+    - [x] Download PDF (IdExterno) - `EnotasApi::V1::BaixarPdfNfsIdExterno`
     - [X] Emissão de Nota Fiscal - `EnotasApi::V1::EmitirNfs`
     - [X] Cancelar - `EnotasApi::V1::CancelarNfs`
     - [X] Cancelar (IdExterno) - `EnotasApi::V1::CancelarNfsIdExterno`

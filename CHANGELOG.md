@@ -10,7 +10,10 @@
 - Implementado Emitir NFS-e
 - Implementado Cancelar NFS-e
 - Implementado Cancelar NFS-e por id externo
-
+- Implementado Baixar XML NFS-e
+- Implementado Baixar XML NFS-e por id externo
+- Implementado Baixar PDF NFS-e
+- Implementado Baixar PDF NFS-e por id externo
 # 0.1.0
 - WIP (ainda não disponível para uso em produção)
 
