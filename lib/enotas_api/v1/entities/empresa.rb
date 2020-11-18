@@ -22,6 +22,7 @@ module EnotasApi
       attribute :cnae, :string
       attribute :aliquotaIss, :decimal
       attribute :descricaoServico, :string
+      attribute :itemListaServicoLC116, :string
       attribute :endereco, EnotasApi::V1::EmpresaEndereco
       attribute :configuracoesNFSeHomologacao, EnotasApi::V1::EmpresaConfiguracoes
       attribute :configuracoesNFSeProducao, EnotasApi::V1::EmpresaConfiguracoes

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe EnotasApi::V1::ConsultarNotaFiscalIdExterno do
+RSpec.describe EnotasApi::V1::ConsultarNfsIdExterno do
   let(:empresa_id) { 123 }
   let(:id_externo) { 456 }
   let(:instance) { described_class.new(empresa_id, id_externo) }

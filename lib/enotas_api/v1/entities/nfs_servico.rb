@@ -15,6 +15,7 @@ module EnotasApi
       attribute :valorCsll, :decimal
       attribute :valorInss, :decimal
       attribute :valorIr, :decimal
+      attribute :codigoInternoServicoMunicipal, :string
     end
   end
 end

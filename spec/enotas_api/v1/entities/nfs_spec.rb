@@ -6,8 +6,7 @@ RSpec.describe EnotasApi::V1::Nfs do
   let(:data) do
     {
       idExterno: 'idExterno', ambienteEmissao: 'ambienteEmissao', enviarPorEmail: true,
-      cliente: { nome: 'nome' }, endereco: { logradouro: 'logradouro' }, servico: { descricao: 'descricao' },
-      valorTotal: 99
+      cliente: { nome: 'nome' }, servico: { descricao: 'descricao' }, valorTotal: 99
     }
   end
   let(:instance) { described_class.new(data) }

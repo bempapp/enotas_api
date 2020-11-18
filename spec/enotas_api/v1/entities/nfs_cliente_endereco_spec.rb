@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe EnotasApi::V1::NfsEndereco do
+RSpec.describe EnotasApi::V1::NfsClienteEndereco do
   let(:data) { { logradouro: 'logradouro', numero: 'numero', complemento: 'complemento', bairro: 'bairro', cep: 'cep', uf: 'uf', cidade: 'cidade' } }
   let(:instance) { described_class.new(data) }
 

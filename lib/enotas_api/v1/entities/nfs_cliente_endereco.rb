@@ -4,7 +4,7 @@ require_relative '../../common/entity'
 
 module EnotasApi
   module V1
-    class NfsEndereco < EnotasApi::Entity
+    class NfsClienteEndereco < EnotasApi::Entity
       attribute :logradouro, :string
       attribute :numero, :string
       attribute :complemento, :string

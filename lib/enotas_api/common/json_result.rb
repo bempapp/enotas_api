@@ -16,13 +16,13 @@ module EnotasApi
     end
 
     def respond_to_missing?(field, _include_private)
-      return true if @data.key?(field.to_s)
+      return true if @data.is_a?(Hash) && @data.key?(field.to_s)
 
       super
     end
 
     def method_missing(field, *_args)
-      if @data.key?(field.to_s)
+      if @data.is_a?(Hash) && @data.key?(field.to_s)
         value = @data[field.to_s]
 
         return case value
