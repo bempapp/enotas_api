@@ -87,7 +87,7 @@ API - NFS-e (V1) - [Documentação](https://docs.enotasgw.com.br/reference)
 - [x] Empresa: Consultar Empresa
 - [x] Empresa: Listar Empresas
 - [x] Empresa: Incluir / Atualizar Empresa
-- [ ] Empresa: Vincular Certificado
+- [x] Empresa: Vincular Certificado
 - [x] Empresa: Vincular Logotipo
 - [x] Empresa: Desabilitar Empresa
 - [x] Empresa: Habilitar Empresa

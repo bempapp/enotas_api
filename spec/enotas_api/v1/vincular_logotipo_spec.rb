@@ -4,9 +4,9 @@ require 'spec_helper'
 
 RSpec.describe EnotasApi::V1::VincularLogotipo do
   let(:empresa_id) { 123 }
-  let(:file_name) { 'logo.png' }
-  let(:file) { 'file' }
-  let(:instance) { described_class.new(empresa_id, file_name, file) }
+  let(:nome_arquivo) { 'logo.png' }
+  let(:arquivo) { 'file' }
+  let(:instance) { described_class.new(empresa_id, nome_arquivo, arquivo) }
 
   it 'implements uri' do
     expect(instance.uri).to eq("/v1/empresas/#{empresa_id}/logo")
@@ -17,6 +17,6 @@ RSpec.describe EnotasApi::V1::VincularLogotipo do
   end
 
   it 'have expected content' do
-    expect(instance.content).to eq({ 'FileName' => file_name, 'logotipo' => file })
+    expect(instance.content).to eq({ 'FileName' => nome_arquivo, 'logotipo' => arquivo })
   end
 end
