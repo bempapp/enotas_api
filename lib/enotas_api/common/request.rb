@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'json'
-require_relative 'result'
+require_relative 'json_result'
 require_relative '../support/encoding_helper'
 require_relative '../support/filterable'
 require_relative '../support/paginable'
@@ -18,7 +18,7 @@ module EnotasApi
 
     attr_reader :params, :uri, :content, :method, :result_object
 
-    def initialize(uri:, method: :GET, content: nil, result_object: EnotasApi::Result)
+    def initialize(uri:, method: :GET, content: nil, result_object: EnotasApi::JsonResult)
       @method = method
       @uri = uri
       @content = content

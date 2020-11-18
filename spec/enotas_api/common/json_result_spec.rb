@@ -2,37 +2,9 @@
 
 require 'spec_helper'
 
-RSpec.describe EnotasApi::Result do
-  describe 'status code' do
-    let(:json) { { ok: true }.to_json.to_s }
-
-    it 'recognize 200 range as success' do
-      instance = described_class.new(200, json)
-
-      expect(instance.success?).to be true
-      expect(instance.error?).to be false
-    end
-
-    it 'recognize range 300 as error' do
-      instance = described_class.new(300, json)
-
-      expect(instance.success?).to be false
-      expect(instance.error?).to be true
-    end
-
-    it 'recognize range 400 as error' do
-      instance = described_class.new(400, json)
-
-      expect(instance.success?).to be false
-      expect(instance.error?).to be true
-    end
-
-    it 'recognize range 500 as error' do
-      instance = described_class.new(500, json)
-
-      expect(instance.success?).to be false
-      expect(instance.error?).to be true
-    end
+RSpec.describe EnotasApi::JsonResult do
+  it 'extends raw result' do
+    expect(described_class < EnotasApi::RawResult).to be true
   end
 
   describe 'no json' do

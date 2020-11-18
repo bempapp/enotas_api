@@ -37,10 +37,6 @@ class TestDeleteRequest < EnotasApi::Request
   end
 end
 
-class CustomResult
-  def initialize(_code, _body); end
-end
-
 RSpec.describe EnotasApi::Request do
   let(:get_request) { TestGetRequest.new }
   let(:post_request) { TestPostRequest.new }
@@ -61,23 +57,23 @@ RSpec.describe EnotasApi::Request do
       expect(result).to be_truthy
     end
 
-    it 'retrieve a Result object' do
+    it 'retrieve a result object' do
       stub_request(:get, url).to_return(body: body)
 
       result = get_request.call
 
-      expect(result.class).to eq(EnotasApi::Result)
+      expect(result.class).to eq(EnotasApi::JsonResult)
       expect(result.json).to be true
     end
 
     it 'allow to customize result object' do
-      allow(get_request).to receive(:result_object).and_return(CustomResult)
+      allow(get_request).to receive(:result_object).and_return(EnotasApi::RawResult)
 
       stub_request(:get, url).to_return(body: body)
 
       result = get_request.call
 
-      expect(result.class).to eq(CustomResult)
+      expect(result.class).to eq(EnotasApi::RawResult)
     end
 
     it 'suports post request' do
