@@ -69,73 +69,69 @@ result = instance.call
 result.to_json # = <JSON retornado pela API do e-notas>
 ```
 
-### Lista de objetos disponiveis
-```ruby
-EnotasApi::V1::ConsultarCaracteristicasPrefeitura.new(codigo_ibge_cidade)
-
-EnotasApi::V1::ConsultarCidadesServicoMunicipalUnificado.new
-
-EnotasApi::V1::ConsultarEmpresa.new(id)
-
-EnotasApi::V1::ConsultarServicosMunicipais.new(uf, nome_cidade)
-
-EnotasApi::V1::ListarEmpresas.new
-```
-
 ## Endpoints suportados (marcados com X) e em desenvolvimento (sem marcação)
-API - NFS-e (V1) - [Documentação](https://docs.enotasgw.com.br/reference)
-- [x] Empresa: Consultar Empresa
-- [x] Empresa: Listar Empresas
-- [x] Empresa: Incluir / Atualizar Empresa
-- [x] Empresa: Vincular Certificado
-- [x] Empresa: Vincular Logotipo
-- [x] Empresa: Desabilitar Empresa
-- [x] Empresa: Habilitar Empresa
-- [x] NFS-E: Listar Notas Fiscais
-- [x] NFS-E: Consultar pelo ID do Gateway
-- [x] NFS-E: Consultar pelo Id Externo
-- [ ] NFS-E: Download XML
-- [ ] NFS-E: Download XML (IdExterno)
-- [ ] NFS-E: Download PDF
-- [ ] NFS-E: Download PDF (IdExterno)
-- [ ] NFS-E: Emissão de Nota Fiscal
-- [ ] NFS-E: Cancelar
-- [ ] NFS-E: Cancelar (IdExterno)
-- [x] API Complementar: Serviços Municipais da Cidade
-- [x] API Complementar: Características da Prefeitura
-- [x] API Complementar: Cidades com Serviço Municipal Unificado
-
-API - NF-e & NFC-e (v2) - [Documentação](https://docs.enotasgw.com.br/v2/reference)
-- [ ] Empresa: Incluir/Alterar Empresa
-- [ ] Empresa: Vincular Certificado
-- [ ] Empresa: Vincular Logotipo
-- [ ] Empresa: Consultar Empresa
-- [ ] Empresa: Listar Empresas
-- [ ] NFC-E: Emitir Nota Fiscal
-- [ ] NFC-E: Consultar Nota Fiscal
-- [ ] NFC-E: Consultar XML
-- [ ] NFC-E: Cancelar Nota Fiscal
-- [ ] NFC-E: Consultar XML de Envio do Cancelamento
-- [ ] NFC-E: Consultar XML de Retorno do Cancelamento
-- [ ] NFC-E: Inutilizar Numeração
-- [ ] NFC-E: Consultar Inutilização de Número da Nota Fiscal
-- [ ] NFC-E: Consultar XML de Inutilização
-- [ ] NF-E: Emitir Nota Fiscal
-- [ ] NF-E: Consultar Nota Fiscal
-- [ ] NF-E: Cancelar Nota Fiscal
-- [ ] NF-E: Consultar XML de Cancelamento
-- [ ] NF-E: Emitir Carta de Correção pela Chave da NF-e
-- [ ] NF-E: Consultar Carta de Correção
-- [ ] NF-E: Consultar XML da Carta de Correção
-- [ ] NF-E: Inutilizar Numeração
-- [ ] NF-E: Consultar Inutilização de Número da Nota Fiscal
-- [ ] NF-E: Consultar XML de Inutilização
-- [ ] S@T - SÃO PAULO: Download EXE customizado do S@T
-- [ ] Consulta de nota prestada (emitida): NFS-e - Consulta de Nota Prestada (Emitida)
-- [ ] Consulta de nota tomada (recebida): NF-e - Consulta de Nota Tomada (Recebida)
-- [ ] Consulta de nota tomada (recebida): NF-e - Consulta de Nota Tomada sem manifestação
-- [ ] Consulta de nota tomada (recebida): NFS-e - Consulta de Nota Tomada (Recebida)
-- [ ] Manifestação de destinatário - NF-E: Manifestação de Destinatário (NF-e)
+- [NFS-e (V1)](https://docs.enotasgw.com.br/reference)
+  - Empresa
+    - [x] Consultar Empresa - `EnotasApi::V1::ConsultarEmpresa`
+    - [x] Listar Empresas - `EnotasApi::V1::ListarEmpresas`
+    - [x] Incluir / Atualizar Empresa - `EnotasApi::V1::IncluirAtualizarEmpresa`
+    - [x] Vincular Certificado - `EnotasApi::V1::VincularCertificado`
+    - [x] Vincular Logotipo - `EnotasApi::V1::VincularLogotipo`
+    - [x] Desabilitar Empresa - `EnotasApi::V1::DesabilitarEmpresa`
+    - [x] Habilitar Empresa - `EnotasApi::V1::HabilitarEmpresa`
+  - Nota Fiscal eletrônica de serviço (NFS-e)
+    - [x] Listar Notas Fiscais - `EnotasApi::V1::ListarNotasFiscais`
+    - [x] Consultar pelo ID do Gateway - `EnotasApi::V1::ConsultarNotaFiscal`
+    - [x] Consultar pelo Id Externo - `EnotasApi::V1::ConsultarNotaFiscalIdExterno`
+    - [ ] Download XML
+    - [ ] Download XML (IdExterno)
+    - [ ] Download PDF
+    - [ ] Download PDF (IdExterno)
+    - [ ] Emissão de Nota Fiscal
+    - [ ] Cancelar
+    - [ ] Cancelar (IdExterno)
+  - API Complementar
+    - [x] Serviços Municipais da Cidade - `EnotasApi::V1::ConsultarServicosMunicipais`
+    - [x] Características da Prefeitura - `EnotasApi::V1::ConsultarCaracteristicasPrefeitura`
+    - [x] Cidades com Serviço Municipal Unificado - `EnotasApi::V1::ConsultarCidadesServicoMunicipalUnificado`
+- [NF-e & NFC-e (v2)](https://docs.enotasgw.com.br/v2/reference)
+  - Empresa
+    - [ ] Incluir/Alterar Empresa
+    - [ ] Vincular Certificado
+    - [ ] Vincular Logotipo
+    - [ ] Consultar Empresa
+    - [ ] Listar Empresas
+  - Nota Fiscal eletrônica de consumidor (NFC-e)
+    - [ ] Emitir Nota Fiscal
+    - [ ] Consultar Nota Fiscal
+    - [ ] Consultar XML
+    - [ ] Cancelar Nota Fiscal
+    - [ ] Consultar XML de Envio do Cancelamento
+    - [ ] Consultar XML de Retorno do Cancelamento
+    - [ ] Inutilizar Numeração
+    - [ ] Consultar Inutilização de Número da Nota Fiscal
+    - [ ] Consultar XML de Inutilização
+  - Nota fiscal eletrônica de produto (NF-e)
+    - [ ] Emitir Nota Fiscal
+    - [ ] Consultar Nota Fiscal
+    - [ ] Cancelar Nota Fiscal
+    - [ ] Consultar XML de Cancelamento
+    - [ ] Emitir Carta de Correção pela Chave da NF-e
+    - [ ] Consultar Carta de Correção
+    - [ ] Consultar XML da Carta de Correção
+    - [ ] Inutilizar Numeração
+    - [ ] Consultar Inutilização de Número da Nota Fiscal
+    - [ ] Consultar XML de Inutilização
+  - S@T - SÃO PAULO
+    - [ ] Download EXE customizado do S@T
+  - Consulta de nota prestada (emitida)
+    - [ ] NFS-e - Consulta de Nota Prestada (Emitida)
+  - Consulta de nota tomada (recebida)
+    - [ ] NF-e - Consulta de Nota Tomada (Recebida)
+    - [ ] NF-e - Consulta de Nota Tomada sem manifestação
+    - [ ] NFS-e - Consulta de Nota Tomada (Recebida)
+  - Manifestação de destinatário NF-e
+    - [ ] Manifestação de Destinatário (NF-e)
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/enotas_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/enotas_api/blob/master/CODE_OF_CONDUCT.md).
