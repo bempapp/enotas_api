@@ -88,8 +88,8 @@ result.to_json # = <JSON retornado pela API do e-notas>
     - [ ] Download PDF
     - [ ] Download PDF (IdExterno)
     - [X] Emissão de Nota Fiscal - `EnotasApi::V1::EmitirNfs`
-    - [ ] Cancelar
-    - [ ] Cancelar (IdExterno)
+    - [X] Cancelar - `EnotasApi::V1::CancelarNfs`
+    - [X] Cancelar (IdExterno) - `EnotasApi::V1::CancelarNfsIdExterno`
   - API Complementar
     - [x] Serviços Municipais da Cidade - `EnotasApi::V1::ConsultarServicosMunicipais`
     - [x] Características da Prefeitura - `EnotasApi::V1::ConsultarCaracteristicasPrefeitura`
