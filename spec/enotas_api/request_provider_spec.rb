@@ -83,4 +83,14 @@ RSpec.describe EnotasApi::RequestProvider do
       expect(result).to eq([200, valid_json])
     end
   end
+
+  describe '#delete' do
+    it 'supports delete method' do
+      stub_request(:delete, url).to_return(body: valid_json)
+
+      result = provider.delete(url)
+
+      expect(result).to eq([200, valid_json])
+    end
+  end
 end

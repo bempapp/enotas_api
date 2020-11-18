@@ -16,6 +16,10 @@ module EnotasApi
       request(obj: Net::HTTP::Post, url: url, form_data: form_data.to_a)
     end
 
+    def delete(url)
+      request(obj: Net::HTTP::Delete, url: url)
+    end
+
     private
 
     def request(obj:, url:, body: nil, form_data: nil, headers: {})
