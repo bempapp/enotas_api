@@ -23,18 +23,18 @@ module EnotasApi
     private
 
     def request(obj:, url:, body: nil, form_data: nil, headers: {})
-      track_request_time(url) do
-        uri = URI(url)
+      uri = URI(url)
 
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = true if url.start_with?('https')
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true if url.start_with?('https')
 
-        request = obj.new(uri)
-        configure_request_headers(request, headers)
+      request = obj.new(uri)
+      configure_request_headers(request, headers)
 
-        request.body = body if body
-        request.set_form(form_data, 'multipart/form-data') if form_data
+      request.body = body if body
+      request.set_form(form_data, 'multipart/form-data') if form_data
 
+      track_request_time(request) do
         response = http.request(request)
 
         [response.code.to_i, response.body]
@@ -50,11 +50,14 @@ module EnotasApi
       }.merge(custom_headers).each { |key, value| request[key] = value }
     end
 
-    def track_request_time(url)
+    def track_request_time(request)
       start = Process.clock_gettime(Process::CLOCK_MONOTONIC)
       value = yield
       finish = Process.clock_gettime(Process::CLOCK_MONOTONIC)
-      EnotasApi::Configuration.current.logger.info("[RequestProvider] #{url} done in #{(finish - start).round(2)} seconds")
+
+      info = "#{request.method} #{request.path}"
+      time = "#{(finish - start).round(2)} seconds"
+      EnotasApi::Configuration.current.logger.info("[RequestProvider] #{info} done in #{time}")
       value
     end
   end

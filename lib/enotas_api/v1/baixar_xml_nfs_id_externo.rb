@@ -8,7 +8,7 @@ module EnotasApi
     class BaixarXmlNfsIdExterno < EnotasApi::Request
       def initialize(empresa_id, id_externo)
         uri = "/v1/empresas/#{url_encode(empresa_id)}/nfes/porIdExterno/#{url_encode(id_externo)}/xml"
-        super(uri: uri, result_object: EnotasApi::RawResult)
+        super(uri: uri)
       end
     end
   end

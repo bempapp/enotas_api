@@ -12,6 +12,6 @@ RSpec.describe EnotasApi::V1::BaixarXmlNfsIdExterno do
   end
 
   it 'have expected result' do
-    expect(instance.result_object).to eq(EnotasApi::RawResult)
+    expect(instance.result_object).to eq(EnotasApi::JsonResult)
   end
 end

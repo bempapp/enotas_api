@@ -81,4 +81,12 @@ RSpec.describe EnotasApi::JsonResult do
       expect(instance.to_json).to eq(json)
     end
   end
+
+  describe 'content' do
+    it 'use as content if json has only a string' do
+      instance = described_class.new(200, '"string"')
+
+      expect(instance.content).to eq('string')
+    end
+  end
 end
