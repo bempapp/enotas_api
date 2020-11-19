@@ -1,14 +1,18 @@
-# EnotasApi (WORK IN PROGRESS)
+# EnotasApi
 *enotas_api* é um cliente ruby para a [API](https://docs.enotasgw.com.br/reference) do [e-notas](https://enotas.com.br/).
 
-Não oficial, porém com design simples e suportada com carinho por [@salaozen](https://github.com/salaozen).
+EnotasApi é uma gem não oficial porém com design simples, livre de dependências
+
+Criada e mantida com carinho por [@salaozen](https://github.com/salaozen).
 
 ## English Readers
 *enotas_api* is a ruby api client for [e-notas](https://enotas.com.br/) [API](https://docs.enotasgw.com.br/reference).
 
-Non oficial, but well supported with love by [@salaozen](https://github.com/salaozen).
+EnotasApi its a non oficial, but well with simple design an dependency free
 
-Because e-notas api is entire in portuguese, the code and documentation from here will also be. Sorry about that. :D
+Created and supported with love by [@salaozen](https://github.com/salaozen).
+
+PS: Because e-notas api is entire in portuguese, the code and documentation from here will also be. Sorry about that. :D
 
 ## Dependencias
 EnotasApi não depende de nenhuma Gem externa para executar, (aloha dependency hell).
@@ -32,7 +36,7 @@ Ou instale você mesmo com:
 $ gem install enotas_api
 ```
 
-## Utilização (WIP)
+## Utilização
 
 Primeiro é necessário configurar o `EnotasApi`
 ```ruby
@@ -70,6 +74,9 @@ result.to_json # = <JSON retornado pela API do e-notas>
 ```
 
 ## Endpoints suportados (marcados com X) e em desenvolvimento (sem marcação)
+Atualmente EnotasApi suporta por complexo a API V1 do enotas (NFS-e)
+O suporte as novas APIs (V2) com suporte a NFC-e e NF-e estarão disponíveis em breve.
+
 - [NFS-e (V1)](https://docs.enotasgw.com.br/reference)
   - Empresa
     - [x] Consultar Empresa - `EnotasApi::V1::ConsultarEmpresa`
@@ -132,8 +139,16 @@ result.to_json # = <JSON retornado pela API do e-notas>
     - [ ] NFS-e - Consulta de Nota Tomada (Recebida)
   - Manifestação de destinatário NF-e
     - [ ] Manifestação de Destinatário (NF-e)
-## Contributing
 
+# Como liberar uma nova versão
+1. Atualizar o [CHANGELOG](https://github.com/salaozen/enotas_api/blob/main/CHANGELOG.md)
+1. Atualizar a versão em [version.rb](https://github.com/salaozen/enotas_api/blob/main/lib/enotas_api/version.rb)
+1. Realizar o commit
+1. Enviar ao repositório `git push origin main`
+1. Criar uma tag `git tag <VERSAO> && git push origin <VERSAO>`
+1. Gerar uma nova versão da gem `gem build enotas_api`
+1. Publicar a gem `gem push enotas_api-<VERSAO>`
+## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/salaozen/enotas_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/salaozen/enotas_api/blob/main/CODE_OF_CONDUCT.md).
 
 ## License

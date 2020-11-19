@@ -5,13 +5,13 @@ AllCops:
     - sample.rb
   NewCops: enable
   UseCache: true
+Layout/LineLength:
+  Max: 150
 Metrics/AbcSize:
   Max: 20
 Metrics/BlockLength:
   Exclude:
     - spec/**/*.rb
-Metrics/LineLength:
-  Max: 150
 Metrics/MethodLength:
   Max: 15
 Naming/MethodParameterName:

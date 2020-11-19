@@ -1,19 +1,4 @@
-# 0.1.1 [UNRELEASED]
-- Implementado Consulta de NFS-e
-- Implementado Consulta de NFS-e por id externo
-- Implementado Listagem de NFS-e
-- Implementado Incluir/Alterar Empresa
-- Implementado Habilitar Empresa
-- Implementado Desabilitar Empresa
-- Implementado Vincular Logotipo de Empresa
-- Implementado Vincular Certificado Digital de Empresa
-- Implementado Emitir NFS-e
-- Implementado Cancelar NFS-e
-- Implementado Cancelar NFS-e por id externo
-- Implementado Baixar XML NFS-e
-- Implementado Baixar XML NFS-e por id externo
-- Implementado Baixar PDF NFS-e
-- Implementado Baixar PDF NFS-e por id externo
+# 1.0.0
+- Implemenado suporte completo a API V1 (NFS-e)
 # 0.1.0
 - WIP (ainda não disponível para uso em produção)
-

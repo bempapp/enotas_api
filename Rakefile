@@ -2,17 +2,14 @@
 
 require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
+require 'rubocop/rake_task'
 
 RSpec::Core::RakeTask.new(:spec)
-
-desc 'Run Rubocop'
-task :rubocop do
-  sh 'rubocop . --auto-correct'
-end
+RuboCop::RakeTask.new
 
 desc 'Run All Resources Check'
 task :check do
-  %w[rubocop spec].each do |task|
+  %w[rubocop:auto_correct spec].each do |task|
     Rake::Task[task].execute
   end
 end
