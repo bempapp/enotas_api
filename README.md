@@ -147,7 +147,7 @@ O suporte as novas APIs (V2) com suporte a NFC-e e NF-e estarão disponíveis em
 1. Enviar ao repositório `git push origin main`
 1. Criar uma tag `git tag <VERSAO> && git push origin <VERSAO>`
 1. Gerar uma nova versão da gem `gem build enotas_api`
-1. Publicar a gem `gem push enotas_api-<VERSAO>`
+1. Publicar a gem `gem push enotas_api-<VERSAO>.gem`
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/salaozen/enotas_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/salaozen/enotas_api/blob/main/CODE_OF_CONDUCT.md).
 
