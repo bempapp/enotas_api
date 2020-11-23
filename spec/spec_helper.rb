@@ -4,6 +4,7 @@ require 'bundler/setup'
 require 'enotas_api'
 require 'webmock/rspec'
 require 'json'
+require 'bigdecimal'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

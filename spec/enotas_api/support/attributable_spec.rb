@@ -61,6 +61,18 @@ RSpec.describe EnotasApi::Attributable do
         expect { instance.decimal_attr = '1' }.to raise_error(EnotasApi::Error)
       end
 
+      it 'allow set integer value' do
+        value = 99
+        instance.decimal_attr = value
+        expect(instance.decimal_attr).to eq(value)
+      end
+
+      it 'allow set BigDecimal value' do
+        value = BigDecimal(99.9, BigDecimal::ROUND_HALF_UP)
+        instance.decimal_attr = value
+        expect(instance.decimal_attr).to eq(value)
+      end
+
       it 'allow to set nil' do
         instance.decimal_attr = 1.0
         instance.decimal_attr = nil

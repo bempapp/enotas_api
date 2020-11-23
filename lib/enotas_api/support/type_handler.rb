@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
+require 'bigdecimal'
+
 module EnotasApi
   class TypeHandler
     VALIDATOR = {
       boolean: ->(value, _type) { value.is_a?(TrueClass) || value.is_a?(FalseClass) },
-      decimal: ->(value, _type) { value.is_a?(Float) || value.is_a?(Integer) },
+      decimal: ->(value, _type) { value.is_a?(Float) || value.is_a?(Integer) || value.is_a?(BigDecimal) },
       integer: ->(value, _type) { value.is_a?(Integer) },
       string: ->(value, _type) { value.is_a?(String) },
       entity: ->(value, type) { value.is_a?(type) || value.is_a?(Hash) }
