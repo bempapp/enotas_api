@@ -1,3 +1,5 @@
+# 1.0.2
+- Ajustando bug na renderização de json, que trazia o atributo inválido @attributes no json
 # 1.0.1
 - Suportando valores BigDecimal para tipo :decimal
 # 1.0.0
