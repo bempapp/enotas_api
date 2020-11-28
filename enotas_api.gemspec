@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Non oficial, well supported, e-notas ruby api client'
   spec.homepage      = 'https://github.com/salaozen/enotas_api'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.6.6')
+  spec.required_ruby_version = Gem::Requirement.new('~> 2.6')
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 

@@ -21,7 +21,11 @@ module EnotasApi
     end
 
     def attributes
-      self.class.attributes
+      self.class.entity_attributes
+    end
+
+    def attribute_type(attribute)
+      self.class.attribute_type(attribute)
     end
 
     def set(attributes)
@@ -51,8 +55,16 @@ module EnotasApi
         end
       end
 
-      def attributes
+      def attributes(map)
+        map.each_pair(&method(:attribute))
+      end
+
+      def entity_attributes
         (@attributes || {}).freeze
+      end
+
+      def attribute_type(attribute)
+        entity_attributes[attribute.to_sym]
       end
     end
   end

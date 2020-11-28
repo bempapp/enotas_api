@@ -7,23 +7,25 @@ class TestEntity < EnotasApi::Entity
   attribute :decimal_attr, :decimal
   attribute :integer_attr, :integer
   attribute :string_attr, :string
+  attribute :datetime_attr, :datetime
   attribute :unset_attr, :string
   attribute :entity_attr, TestEntity
 end
 
 RSpec.describe EnotasApi::Entity do
-  let(:data) do
-    { decimal_attr: 9.99, integer_attr: 10, string_attr: 'value',
+  let(:datetime) { DateTime.now }
+  let(:json_data) do
+    { decimal_attr: 9.99, integer_attr: 10, string_attr: 'value', datetime_attr: datetime.to_time.utc.iso8601,
       entity_attr: { boolean_attr: nil, string_attr: 'another_value' } }
   end
-  let(:instance) { TestEntity.new(data) }
+  let(:instance) do
+    TestEntity.new(decimal_attr: 9.99, integer_attr: 10, string_attr: 'value', datetime_attr: datetime,
+                   entity_attr: { boolean_attr: nil, string_attr: 'another_value' })
+  end
 
   describe '#as_json' do
     it 'retrieves attributes map to have right json support in rails' do
-      expect(instance.as_json).to eq(
-        decimal_attr: 9.99, integer_attr: 10, string_attr: 'value',
-        entity_attr: { boolean_attr: nil, string_attr: 'another_value' }
-      )
+      expect(instance.as_json).to eq(json_data)
     end
   end
 
@@ -40,7 +42,11 @@ RSpec.describe EnotasApi::Entity do
     end
 
     it 'render all attributes as json' do
-      expect(json).to eq(data.to_json)
+      expect(json).to eq(json_data.to_json)
+    end
+
+    it 'render datetime with expected format' do
+      expect(json_object['datetime_attr']).to eq(datetime.to_time.utc.iso8601)
     end
   end
 end

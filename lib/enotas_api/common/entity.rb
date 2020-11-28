@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'json'
+require 'date'
+require 'time'
 require_relative '../support/attributable'
 
 module EnotasApi
@@ -8,10 +10,10 @@ module EnotasApi
     include EnotasApi::Attributable
 
     def as_json(_options = nil)
-      self.class.attributes.keys
-          .map { |att| [att, json_value(att)] }
-          .reject { |e| e[1].nil? && !attribute_changed?(e[0]) }
-          .to_h
+      attributes.keys
+                .map { |att| [att, json_value(att)] }
+                .reject { |e| e[1].nil? && !attribute_changed?(e[0]) }
+                .to_h
     end
 
     def to_json(options = nil)
@@ -22,7 +24,14 @@ module EnotasApi
 
     def json_value(attr)
       value = send(attr)
-      value.is_a?(EnotasApi::Entity) ? value.as_json : value
+      return nil if value.nil?
+
+      type = attribute_type(attr)
+
+      return value.as_json if type.is_a?(Class)
+      return value.to_time.utc.iso8601 if type == :datetime
+
+      value
     end
   end
 end

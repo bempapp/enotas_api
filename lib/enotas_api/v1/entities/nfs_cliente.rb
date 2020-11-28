@@ -6,11 +6,14 @@ require_relative 'nfs_cliente_endereco'
 module EnotasApi
   module V1
     class NfsCliente < EnotasApi::Entity
-      attribute :tipoPessoa, :string
-      attribute :nome, :string
-      attribute :email, :string
-      attribute :cpfCnpj, :string
-      attribute :endereco, EnotasApi::V1::NfsClienteEndereco
+      attributes tipoPessoa: :string,
+                 nome: :string,
+                 email: :string,
+                 cpfCnpj: :string,
+                 inscricaoMunicipal: :string,
+                 inscricaoEstadual: :string,
+                 telefone: :string,
+                 endereco: NfsClienteEndereco
     end
   end
 end

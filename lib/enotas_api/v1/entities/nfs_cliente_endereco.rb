@@ -5,13 +5,13 @@ require_relative '../../common/entity'
 module EnotasApi
   module V1
     class NfsClienteEndereco < EnotasApi::Entity
-      attribute :logradouro, :string
-      attribute :numero, :string
-      attribute :complemento, :string
-      attribute :bairro, :string
-      attribute :cep, :string
-      attribute :uf, :string
-      attribute :cidade, :string
+      attributes logradouro: :string,
+                 numero: :string,
+                 complemento: :string,
+                 bairro: :string,
+                 cep: :string,
+                 uf: :string,
+                 cidade: :string
     end
   end
 end

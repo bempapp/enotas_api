@@ -7,7 +7,12 @@ class TestAttributable < EnotasApi::Entity
   attribute :decimal_attr, :decimal
   attribute :integer_attr, :integer
   attribute :string_attr, :string
+  attribute :datetime_attr, :datetime
   attribute :entity_attr, TestAttributable
+end
+
+class TestAttributableMap < EnotasApi::Entity
+  attributes boolean_attr: :boolean, decimal_attr: :decimal
 end
 
 RSpec.describe EnotasApi::Attributable do
@@ -127,19 +132,49 @@ RSpec.describe EnotasApi::Attributable do
         expect(instance.entity_attr.string_attr).to eq(value)
       end
     end
+
+    describe ':datetime' do
+      it 'create attribute' do
+        value = DateTime.now
+        instance.datetime_attr = value
+        expect(instance.datetime_attr).to eq(value)
+      end
+
+      it 'not allow set non datetime value' do
+        expect { instance.datetime_attr = '' }.to raise_error(EnotasApi::Error)
+      end
+
+      it 'allow to set nil' do
+        instance.datetime_attr = DateTime.now
+        instance.datetime_attr = nil
+        expect(instance.datetime_attr).to be_nil
+      end
+
+      it 'allow to set date' do
+        value = Date.today
+        instance.datetime_attr = value
+        expect(instance.datetime_attr).to eq(value)
+      end
+    end
   end
 
   describe '#attributes' do
     it 'retrieves attributes' do
-      expect(instance.class.attributes).to eq({
-                                                boolean_attr: :boolean, decimal_attr: :decimal,
-                                                integer_attr: :integer, string_attr: :string,
-                                                entity_attr: TestAttributable
-                                              })
+      expect(instance.class.entity_attributes).to eq({
+                                                       boolean_attr: :boolean, decimal_attr: :decimal,
+                                                       integer_attr: :integer, string_attr: :string,
+                                                       entity_attr: TestAttributable, datetime_attr: :datetime
+                                                     })
     end
 
     it 'retrieve atributes from instance' do
-      expect(instance.attributes).to eq(instance.class.attributes)
+      expect(instance.attributes).to eq(instance.class.entity_attributes)
+    end
+  end
+
+  describe '#attributes_map' do
+    it 'allow to set attributes using a map' do
+      expect(TestAttributableMap.entity_attributes).to eq(boolean_attr: :boolean, decimal_attr: :decimal)
     end
   end
 
@@ -178,6 +213,13 @@ RSpec.describe EnotasApi::Attributable do
       expect(entity.attributes_changed).to include(:integer_attr)
       expect(entity.attribute_changed?(:boolean_attr)).to eq true
       expect(entity.attribute_changed?(:integer_attr)).to eq true
+    end
+  end
+
+  describe '#attribute_type' do
+    it 'retrieve attribute type' do
+      expect(instance.attribute_type(:boolean_attr)).to eq(:boolean)
+      expect(instance.attribute_type(:entity_attr)).to eq(TestAttributable)
     end
   end
 end
