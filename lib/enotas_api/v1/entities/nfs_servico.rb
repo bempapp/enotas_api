@@ -5,17 +5,21 @@ require_relative '../../common/entity'
 module EnotasApi
   module V1
     class NfsServico < EnotasApi::Entity
-      attribute :descricao, :string
-      attribute :aliquotaIss, :decimal
-      attribute :issRetidoFonte, :boolean
-      attribute :cnae, :string
-      attribute :codigoServicoMunicipio, :string
-      attribute :valorPis, :decimal
-      attribute :valorCofins, :decimal
-      attribute :valorCsll, :decimal
-      attribute :valorInss, :decimal
-      attribute :valorIr, :decimal
-      attribute :codigoInternoServicoMunicipal, :string
+      attributes ufPrestacaoServico: :string,
+                 municipioPrestacaoServico: :string,
+                 descricao: :string,
+                 aliquotaIss: :decimal,
+                 issRetidoFonte: :boolean,
+                 cnae: :string,
+                 codigoServicoMunicipio: :string,
+                 descricaoServicoMunicipio: :string,
+                 itemListaServicoLC116: :string,
+                 valorPis: :decimal,
+                 valorCofins: :decimal,
+                 valorCsll: :decimal,
+                 valorInss: :decimal,
+                 valorIr: :decimal,
+                 codigoInternoServicoMunicipal: :string
     end
   end
 end

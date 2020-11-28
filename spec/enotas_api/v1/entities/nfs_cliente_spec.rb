@@ -3,10 +3,16 @@
 require 'spec_helper'
 
 RSpec.describe EnotasApi::V1::NfsCliente do
-  let(:data) { { tipoPessoa: 'tipoPessoa', nome: 'nome', email: 'email', cpfCnpj: 'cpfCnpj', endereco: { logradouro: 'logradouro' } } }
+  let(:data) do
+    {
+      tipoPessoa: 'tipoPessoa', nome: 'nome', email: 'email', cpfCnpj: 'cpfCnpj',
+      inscricaoMunicipal: 'inscricaoMunicipal', inscricaoEstadual: 'inscricaoEstadual', telefone: 'telefone',
+      endereco: { logradouro: 'logradouro' }
+    }
+  end
   let(:instance) { described_class.new(data) }
 
   it 'have expected attributes' do
-    expect(instance.to_json).to eq(data.to_json)
+    expect(JSON.parse(instance.to_json)).to eq(JSON.parse(data.to_json))
   end
 end

@@ -3,17 +3,26 @@
 require_relative '../../common/entity'
 require_relative 'nfs_cliente'
 require_relative 'nfs_servico'
+require_relative 'nfs_dados_adicionais_email'
 
 module EnotasApi
   module V1
     class Nfs < EnotasApi::Entity
-      attribute :idExterno, :string
-      attribute :ambienteEmissao, :string
-      attribute :enviarPorEmail, :boolean
-      attribute :cliente, EnotasApi::V1::NfsCliente
-      attribute :servico, EnotasApi::V1::NfsServico
-      attribute :valorTotal, :decimal
-      attribute :observacoes, :string
+      attributes idExterno: :string,
+                 ambienteEmissao: :string,
+                 numeroRps: :integer,
+                 serieRps: :string,
+                 tipo: :string,
+                 dataCompetencia: :datetime,
+                 enviarPorEmail: :boolean,
+                 dadosAdicionaisEmail: NfsDadosAdicionaisEmail,
+                 cliente: NfsCliente,
+                 servico: NfsServico,
+                 naturezaOperacao: :string,
+                 deducoes: :decimal,
+                 descontos: :decimal,
+                 valorTotal: :decimal,
+                 observacoes: :string
     end
   end
 end

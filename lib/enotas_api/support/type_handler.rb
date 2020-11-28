@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'bigdecimal'
+require 'date'
 
 module EnotasApi
   class TypeHandler
@@ -9,6 +10,7 @@ module EnotasApi
       decimal: ->(value, _type) { value.is_a?(Float) || value.is_a?(Integer) || value.is_a?(BigDecimal) },
       integer: ->(value, _type) { value.is_a?(Integer) },
       string: ->(value, _type) { value.is_a?(String) },
+      datetime: ->(value, _type) { value.is_a?(DateTime) || value.is_a?(Date) },
       entity: ->(value, type) { value.is_a?(type) || value.is_a?(Hash) }
     }.freeze
 
