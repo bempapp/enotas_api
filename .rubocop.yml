@@ -1,8 +1,6 @@
 require: rubocop-rspec
 
 AllCops:
-  Exclude:
-    - sample.rb
   NewCops: enable
   UseCache: true
 Layout/LineLength:

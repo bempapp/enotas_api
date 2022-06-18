@@ -44,7 +44,7 @@ module EnotasApi
     def configure_request_headers(request, custom_headers)
       {
         'Authorization' => "Basic #{EnotasApi::Configuration.current.api_key}",
-        "Accept": 'application/json',
+        Accept: 'application/json',
         'Content-Type' => 'application/json',
         'User-Agent' => 'Enotas-Ruby-SDK'
       }.merge(custom_headers).each { |key, value| request[key] = value }

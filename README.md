@@ -3,14 +3,14 @@
 
 EnotasApi é uma gem não oficial porém com design simples, livre de dependências
 
-Criada e mantida com carinho por [@salaozen](https://github.com/salaozen).
+Criada e mantida com carinho por [@bempapp](https://github.com/bempapp).
 
 ## English Readers
 *enotas_api* is a ruby api client for [e-notas](https://enotas.com.br/) [API](https://docs.enotasgw.com.br/reference).
 
 EnotasApi its a non oficial, but well with simple design an dependency free
 
-Created and supported with love by [@salaozen](https://github.com/salaozen).
+Created and supported with love by [@bempapp](https://github.com/bempapp).
 
 PS: Because e-notas api is entire in portuguese, the code and documentation from here will also be. Sorry about that. :D
 
@@ -141,15 +141,16 @@ O suporte as novas APIs (V2) com suporte a NFC-e e NF-e estarão disponíveis em
     - [ ] Manifestação de Destinatário (NF-e)
 
 # Como liberar uma nova versão
-1. Atualizar o [CHANGELOG](https://github.com/salaozen/enotas_api/blob/main/CHANGELOG.md)
-1. Atualizar a versão em [version.rb](https://github.com/salaozen/enotas_api/blob/main/lib/enotas_api/version.rb)
+1. Atualizar o [CHANGELOG](https://github.com/bempapp/enotas_api/blob/main/CHANGELOG.md)
+1. Atualizar a versão em [version.rb](https://github.com/bempapp/enotas_api/blob/main/lib/enotas_api/version.rb)
 1. Realizar o commit
 1. Enviar ao repositório `git push origin main`
 1. Criar uma tag `git tag <VERSAO> && git push origin <VERSAO>`
 1. Gerar uma nova versão da gem `gem build enotas_api`
 1. Publicar a gem `gem push enotas_api-<VERSAO>.gem`
+
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/salaozen/enotas_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/salaozen/enotas_api/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/bempapp/enotas_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/bempapp/enotas_api/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -157,4 +158,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the EnotasApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/salaozen/enotas_api/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the EnotasApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/bempapp/enotas_api/blob/main/CODE_OF_CONDUCT.md).

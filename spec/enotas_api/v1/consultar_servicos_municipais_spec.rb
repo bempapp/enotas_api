@@ -12,10 +12,10 @@ RSpec.describe EnotasApi::V1::ConsultarServicosMunicipais do
   end
 
   it 'allow pagination' do
-    expect(instance.respond_to?(:page)).to eq true
+    expect(instance.respond_to?(:page)).to be true
   end
 
   it 'allow filter by description' do
-    expect(instance.respond_to?(:descricao_contains)).to eq true
+    expect(instance.respond_to?(:descricao_contains)).to be true
   end
 end

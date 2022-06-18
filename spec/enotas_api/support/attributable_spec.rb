@@ -181,7 +181,7 @@ RSpec.describe EnotasApi::Attributable do
   describe '#set' do
     it 'is posible to set multiple values at a time' do
       instance.set({ boolean_attr: true, decimal_attr: 9.9, integer_attr: 10, string_attr: 'str' })
-      expect(instance.boolean_attr).to eq(true)
+      expect(instance.boolean_attr).to be(true)
       expect(instance.decimal_attr).to eq(9.9)
       expect(instance.integer_attr).to eq(10)
       expect(instance.string_attr).to eq('str')
@@ -195,7 +195,7 @@ RSpec.describe EnotasApi::Attributable do
   describe '#initialize' do
     it 'is posible to initialize entities with values' do
       entity = TestAttributable.new({ boolean_attr: true, decimal_attr: 9.9, integer_attr: 10, string_attr: 'str' })
-      expect(entity.boolean_attr).to eq(true)
+      expect(entity.boolean_attr).to be(true)
       expect(entity.decimal_attr).to eq(9.9)
       expect(entity.integer_attr).to eq(10)
       expect(entity.string_attr).to eq('str')
@@ -211,8 +211,8 @@ RSpec.describe EnotasApi::Attributable do
       expect(entity.attributes_changed.length).to eq 2
       expect(entity.attributes_changed).to include(:boolean_attr)
       expect(entity.attributes_changed).to include(:integer_attr)
-      expect(entity.attribute_changed?(:boolean_attr)).to eq true
-      expect(entity.attribute_changed?(:integer_attr)).to eq true
+      expect(entity.attribute_changed?(:boolean_attr)).to be true
+      expect(entity.attribute_changed?(:integer_attr)).to be true
     end
   end
 

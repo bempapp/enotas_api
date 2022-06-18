@@ -2,6 +2,6 @@
 
 RSpec.describe EnotasApi do
   it 'has a version number' do
-    expect(EnotasApi::VERSION).not_to be nil
+    expect(EnotasApi::VERSION).not_to be_nil
   end
 end
