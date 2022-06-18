@@ -37,7 +37,7 @@ RSpec.describe EnotasApi::RequestProvider do
     end
 
     it 'add json accept' do
-      stub_request(:get, url).with(headers: { 'Accept': 'application/json' }).to_return(body: valid_json)
+      stub_request(:get, url).with(headers: { Accept: 'application/json' }).to_return(body: valid_json)
 
       result = provider.get(url)
 

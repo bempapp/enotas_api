@@ -31,7 +31,7 @@ RSpec.describe EnotasApi::Configuration do
     end
 
     it 'allow to override default' do
-      custom = instance_double('request_provider')
+      custom = instance_double(EnotasApi::RequestProvider)
 
       conf.configure(api_key: api_key, request_provider: custom)
 
@@ -64,7 +64,7 @@ RSpec.describe EnotasApi::Configuration do
 
     it 'allow to configure logger' do
       message = 'hello logger'
-      custom_logger = instance_double('request_provider', info: nil)
+      custom_logger = instance_double(Logger, info: nil)
       conf.configure(api_key: api_key, logger: custom_logger)
 
       current.logger.info('hello logger')

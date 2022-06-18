@@ -11,11 +11,11 @@ RSpec.describe EnotasApi::V1::ListarNotasFiscais do
   end
 
   it 'allow pagination' do
-    expect(instance.respond_to?(:page)).to eq true
+    expect(instance.respond_to?(:page)).to be true
   end
 
   it 'allow sort by expected fields' do
-    expect(instance.respond_to?(:sort)).to eq true
-    expect(instance.respond_to?(:sort_by_data_criacao)).to eq true
+    expect(instance.respond_to?(:sort)).to be true
+    expect(instance.respond_to?(:sort_by_data_criacao)).to be true
   end
 end

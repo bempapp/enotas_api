@@ -10,21 +10,21 @@ RSpec.describe EnotasApi::V1::ListarEmpresas do
   end
 
   it 'allow pagination' do
-    expect(instance.respond_to?(:page)).to eq true
+    expect(instance.respond_to?(:page)).to be true
   end
 
   it 'allow search by expected fields' do
-    expect(instance.respond_to?(:search)).to eq true
-    expect(instance.respond_to?(:search_by_nome_fantasia)).to eq true
-    expect(instance.respond_to?(:search_by_razao_social)).to eq true
+    expect(instance.respond_to?(:search)).to be true
+    expect(instance.respond_to?(:search_by_nome_fantasia)).to be true
+    expect(instance.respond_to?(:search_by_razao_social)).to be true
   end
 
   it 'allow sort by expected fields' do
-    expect(instance.respond_to?(:sort)).to eq true
-    expect(instance.respond_to?(:sort_by_nome_fantasia)).to eq true
-    expect(instance.respond_to?(:sort_by_razao_social)).to eq true
-    expect(instance.respond_to?(:sort_by_cidade)).to eq true
-    expect(instance.respond_to?(:sort_by_data_criacao)).to eq true
-    expect(instance.respond_to?(:sort_by_data_ultima_modificacao)).to eq true
+    expect(instance.respond_to?(:sort)).to be true
+    expect(instance.respond_to?(:sort_by_nome_fantasia)).to be true
+    expect(instance.respond_to?(:sort_by_razao_social)).to be true
+    expect(instance.respond_to?(:sort_by_cidade)).to be true
+    expect(instance.respond_to?(:sort_by_data_criacao)).to be true
+    expect(instance.respond_to?(:sort_by_data_ultima_modificacao)).to be true
   end
 end
