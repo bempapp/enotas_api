@@ -1,5 +1,7 @@
 # Not Released
 - Update changelog on gemspec
+# 3.0.1
+- Solving compability error with ruby 3
 # 3.0.0
 - Add support to ruby >= 2.7 (compatible with ruby 3)
 - [BREAKING_CHANGE] Drop support for ruby 2.6

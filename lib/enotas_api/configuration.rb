@@ -13,8 +13,8 @@ module EnotasApi
 
     attr_reader :configured, :api_key, :request_provider, :base_url, :logger
 
-    def self.configure(**kwargs)
-      instance.configure(kwargs)
+    def self.configure(...)
+      instance.configure(...)
     end
 
     def self.current

@@ -8,8 +8,8 @@ module EnotasApi
       base.extend ClassMethods
     end
 
-    def initialize(**attrs)
-      set(attrs)
+    def initialize(...)
+      set(...)
     end
 
     def attributes_changed
@@ -28,8 +28,8 @@ module EnotasApi
       self.class.attribute_type(attribute)
     end
 
-    def set(attributes)
-      return if attributes&.empty?
+    def set(attributes = nil)
+      return if attributes.nil? || attributes.empty?
 
       attributes.each_pair do |attr, value|
         method = "#{attr}="
@@ -56,7 +56,7 @@ module EnotasApi
       end
 
       def attributes(map)
-        map.each_pair(&method(:attribute))
+        map.each_pair { |name, type| attribute(name, type) }
       end
 
       def entity_attributes
