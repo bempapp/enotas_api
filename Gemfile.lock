@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    enotas_api (2.0.0)
+    enotas_api (3.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -66,4 +66,4 @@ DEPENDENCIES
   webmock (~> 3.14)
 
 BUNDLED WITH
-   2.1.4
+   2.3.16
