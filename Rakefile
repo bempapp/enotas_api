@@ -9,7 +9,7 @@ RuboCop::RakeTask.new
 
 desc 'Run All Resources Check'
 task :check do
-  %w[rubocop:auto_correct spec].each do |task|
+  %w[rubocop:autocorrect spec].each do |task|
     Rake::Task[task].execute
   end
 end

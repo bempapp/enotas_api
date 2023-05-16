@@ -16,7 +16,7 @@ PS: Because e-notas api is entire in portuguese, the code and documentation from
 
 ## Dependencias
 EnotasApi não depende de nenhuma Gem externa para executar, (aloha dependency hell).
-Porém implementamos utilizamos a versão que ruby que temos em produção atualmente que é `~> ruby 3.2.2`.
+Porém implementamos com a versão de ruby `>= ruby 3.1` que é compatível com a versão que temos em produção,  `~> ruby 3.2.2`.
 Se tiver interesse em fazer backport para versões anteriores, não deixe de fazer seu comentário ou abrir um PR.
 
 ## Instalação
