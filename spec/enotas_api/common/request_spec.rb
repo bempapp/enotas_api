@@ -50,7 +50,7 @@ RSpec.describe EnotasApi::Request do
 
   describe '#call' do
     it 'make a get request to expected url' do
-      stub_request(:get, url).to_return(body: body)
+      stub_request(:get, url).to_return(body:)
 
       result = get_request.call
 
@@ -58,7 +58,7 @@ RSpec.describe EnotasApi::Request do
     end
 
     it 'retrieve a result object' do
-      stub_request(:get, url).to_return(body: body)
+      stub_request(:get, url).to_return(body:)
 
       result = get_request.call
 
@@ -69,7 +69,7 @@ RSpec.describe EnotasApi::Request do
     it 'allow to customize result object' do
       allow(get_request).to receive(:result_object).and_return(EnotasApi::RawResult)
 
-      stub_request(:get, url).to_return(body: body)
+      stub_request(:get, url).to_return(body:)
 
       result = get_request.call
 
@@ -77,7 +77,7 @@ RSpec.describe EnotasApi::Request do
     end
 
     it 'suports post request' do
-      stub_request(:post, url).with(body: /request_body/).to_return(body: body)
+      stub_request(:post, url).with(body: /request_body/).to_return(body:)
 
       result = post_request.call
 
@@ -88,7 +88,7 @@ RSpec.describe EnotasApi::Request do
     it 'supports post_form request' do
       stub_request(:post, 'base_url/test_uri')
         .with(headers: { 'Content-Type' => 'multipart/form-data' })
-        .to_return(body: body)
+        .to_return(body:)
 
       result = post_form_request.call
 
@@ -97,7 +97,7 @@ RSpec.describe EnotasApi::Request do
     end
 
     it 'supports delete request' do
-      stub_request(:delete, 'base_url/delete_uri').to_return(body: body)
+      stub_request(:delete, 'base_url/delete_uri').to_return(body:)
 
       result = TestDeleteRequest.new.call
 
@@ -108,7 +108,7 @@ RSpec.describe EnotasApi::Request do
 
   describe '#call!' do
     it 'retrieve a result object when success' do
-      stub_request(:get, url).to_return(body: body)
+      stub_request(:get, url).to_return(body:)
 
       result = get_request.call!
 
@@ -116,7 +116,7 @@ RSpec.describe EnotasApi::Request do
     end
 
     it 'throw an error when failed' do
-      stub_request(:get, url).to_return(status: 400, body: body)
+      stub_request(:get, url).to_return(status: 400, body:)
 
       expect { get_request.call! }.to raise_error(EnotasApi::Error)
     end

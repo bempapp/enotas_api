@@ -17,7 +17,7 @@ RSpec.describe EnotasApi::Configuration do
     end
 
     it 'retrieve the key' do
-      conf.configure(api_key: api_key)
+      conf.configure(api_key:)
 
       expect(current.api_key).to eq(api_key)
     end
@@ -25,7 +25,7 @@ RSpec.describe EnotasApi::Configuration do
 
   describe '#request_provider' do
     it 'uses RequestProvider by default' do
-      conf.configure(api_key: api_key)
+      conf.configure(api_key:)
 
       expect(current.request_provider.class).to eq(EnotasApi::RequestProvider)
     end
@@ -33,7 +33,7 @@ RSpec.describe EnotasApi::Configuration do
     it 'allow to override default' do
       custom = instance_double(EnotasApi::RequestProvider)
 
-      conf.configure(api_key: api_key, request_provider: custom)
+      conf.configure(api_key:, request_provider: custom)
 
       expect(current.request_provider).to eq(custom)
     end
@@ -41,7 +41,7 @@ RSpec.describe EnotasApi::Configuration do
 
   describe '#base_url' do
     it 'has production url by default' do
-      conf.configure(api_key: api_key)
+      conf.configure(api_key:)
 
       expect(current.base_url).to eq('https://api.enotasgw.com.br')
     end
@@ -49,7 +49,7 @@ RSpec.describe EnotasApi::Configuration do
     it 'allow to override default' do
       custom_url = 'http://example.com'
 
-      conf.configure(api_key: api_key, base_url: custom_url)
+      conf.configure(api_key:, base_url: custom_url)
 
       expect(current.base_url).to eq(custom_url)
     end
@@ -57,7 +57,7 @@ RSpec.describe EnotasApi::Configuration do
 
   describe '#logger' do
     it 'has a default logger' do
-      conf.configure(api_key: api_key)
+      conf.configure(api_key:)
 
       expect(current.logger).to respond_to(:info)
     end
@@ -65,7 +65,7 @@ RSpec.describe EnotasApi::Configuration do
     it 'allow to configure logger' do
       message = 'hello logger'
       custom_logger = instance_double(Logger, info: nil)
-      conf.configure(api_key: api_key, logger: custom_logger)
+      conf.configure(api_key:, logger: custom_logger)
 
       current.logger.info('hello logger')
 

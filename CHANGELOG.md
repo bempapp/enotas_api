@@ -1,3 +1,7 @@
+# 4.0.0
+- Add support to ruby >= 3.2.2
+- [BREAKING_CHANGE] Drop support for ruby 2.7
+- Update development gems
 # Not Released
 - Update changelog on gemspec
 # 3.0.1

@@ -8,7 +8,7 @@ module EnotasApi
     class BaixarPdfNfsIdExterno < EnotasApi::Request
       def initialize(empresa_id, id_externo)
         uri = "/v1/empresas/#{url_encode(empresa_id)}/nfes/porIdExterno/#{url_encode(id_externo)}/pdf"
-        super(uri: uri, result_object: EnotasApi::RawResult)
+        super(uri:, result_object: EnotasApi::RawResult)
       end
     end
   end

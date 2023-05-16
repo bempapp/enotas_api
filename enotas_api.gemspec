@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Non oficial, well supported, e-notas ruby api client'
   spec.homepage      = 'https://github.com/bempapp/enotas_api'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.7')
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.2.2')
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
@@ -27,10 +27,5 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'rake', '~> 13.0'
-  spec.add_development_dependency 'rspec', '~> 3.11'
-  spec.add_development_dependency 'rubocop', '~> 1.30'
-  spec.add_development_dependency 'rubocop-rspec', '~> 2.11'
-  spec.add_development_dependency 'webmock', '~> 3.14'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end

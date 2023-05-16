@@ -5,19 +5,19 @@ require 'net/http'
 module EnotasApi
   class RequestProvider
     def get(url)
-      request(obj: Net::HTTP::Get, url: url)
+      request(obj: Net::HTTP::Get, url:)
     end
 
     def post(url, body)
-      request(obj: Net::HTTP::Post, url: url, body: body)
+      request(obj: Net::HTTP::Post, url:, body:)
     end
 
     def post_form(url, form_data)
-      request(obj: Net::HTTP::Post, url: url, form_data: form_data.to_a)
+      request(obj: Net::HTTP::Post, url:, form_data: form_data.to_a)
     end
 
     def delete(url)
-      request(obj: Net::HTTP::Delete, url: url)
+      request(obj: Net::HTTP::Delete, url:)
     end
 
     private

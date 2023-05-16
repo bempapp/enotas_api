@@ -8,7 +8,7 @@ module EnotasApi
     class BaixarXmlNfs < EnotasApi::Request
       def initialize(empresa_id, nfs_id)
         uri = "/v1/empresas/#{url_encode(empresa_id)}/nfes/#{url_encode(nfs_id)}/xml"
-        super(uri: uri)
+        super(uri:)
       end
     end
   end

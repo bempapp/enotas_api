@@ -16,7 +16,7 @@ PS: Because e-notas api is entire in portuguese, the code and documentation from
 
 ## Dependencias
 EnotasApi não depende de nenhuma Gem externa para executar, (aloha dependency hell).
-Porém implementamos utilizamos a versão que ruby que temos em produção atualmente que é `~> ruby 2.6.6`.
+Porém implementamos utilizamos a versão que ruby que temos em produção atualmente que é `~> ruby 3.2.2`.
 Se tiver interesse em fazer backport para versões anteriores, não deixe de fazer seu comentário ou abrir um PR.
 
 ## Instalação
@@ -141,6 +141,7 @@ O suporte as novas APIs (V2) com suporte a NFC-e e NF-e estarão disponíveis em
     - [ ] Manifestação de Destinatário (NF-e)
 
 # Como liberar uma nova versão
+1. Garantir cobertura de teste em 100% (para rodar os testes: rake check) 
 1. Atualizar o [CHANGELOG](https://github.com/bempapp/enotas_api/blob/main/CHANGELOG.md)
 1. Atualizar a versão em [version.rb](https://github.com/bempapp/enotas_api/blob/main/lib/enotas_api/version.rb)
 1. Realizar o commit

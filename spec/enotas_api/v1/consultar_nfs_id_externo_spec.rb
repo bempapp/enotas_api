@@ -8,6 +8,6 @@ RSpec.describe EnotasApi::V1::ConsultarNfsIdExterno do
   let(:instance) { described_class.new(empresa_id, id_externo) }
 
   it 'implements uri' do
-    "/v1/empresas/#{empresa_id}/nfes/porIdExterno/#{id_externo}"
+    expect(instance.uri).to eq("/v1/empresas/#{empresa_id}/nfes/porIdExterno/#{id_externo}")
   end
 end
