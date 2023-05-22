@@ -1,3 +1,6 @@
+# 4.1.0
+- Add support to ruby >= 3.1
+- Add endpoints API V2 - Empresa
 # 4.0.0
 - Add support to ruby >= 3.2.2
 - [BREAKING_CHANGE] Drop support for ruby 2.7

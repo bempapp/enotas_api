@@ -103,11 +103,11 @@ O suporte as novas APIs (V2) com suporte a NFC-e e NF-e estarão disponíveis em
     - [x] Cidades com Serviço Municipal Unificado - `EnotasApi::V1::ConsultarCidadesServicoMunicipalUnificado`
 - [NF-e & NFC-e (v2)](https://docs.enotasgw.com.br/v2/reference)
   - Empresa
-    - [ ] Incluir/Alterar Empresa
-    - [ ] Vincular Certificado
-    - [ ] Vincular Logotipo
-    - [ ] Consultar Empresa
-    - [ ] Listar Empresas
+    - [x] Incluir/Alterar Empresa
+    - [x] Vincular Certificado
+    - [x] Vincular Logotipo
+    - [x] Consultar Empresa
+    - [x] Listar Empresas
   - Nota Fiscal eletrônica de consumidor (NFC-e)
     - [ ] Emitir Nota Fiscal
     - [ ] Consultar Nota Fiscal
