@@ -11,6 +11,7 @@ module EnotasApi
       integer: ->(value, _type) { value.is_a?(Integer) },
       string: ->(value, _type) { value.is_a?(String) },
       datetime: ->(value, _type) { value.is_a?(DateTime) || value.is_a?(Date) },
+      array: ->(value, _type) { value.is_a?(Array) },
       entity: ->(value, type) { value.is_a?(type) || value.is_a?(Hash) }
     }.freeze
 

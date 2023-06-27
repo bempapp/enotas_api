@@ -119,9 +119,9 @@ O suporte as novas APIs (V2) com suporte a NFC-e e NF-e estarão disponíveis em
     - [ ] Consultar Inutilização de Número da Nota Fiscal
     - [ ] Consultar XML de Inutilização
   - Nota fiscal eletrônica de produto (NF-e)
-    - [ ] Emitir Nota Fiscal
-    - [ ] Consultar Nota Fiscal
-    - [ ] Cancelar Nota Fiscal
+    - [x] Emitir Nota Fiscal
+    - [x] Consultar Nota Fiscal
+    - [x] Cancelar Nota Fiscal
     - [ ] Consultar XML de Cancelamento
     - [ ] Emitir Carta de Correção pela Chave da NF-e
     - [ ] Consultar Carta de Correção
