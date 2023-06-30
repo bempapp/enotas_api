@@ -1,3 +1,5 @@
+# 4.2.1
+- Add descontos to nfe_item
 # 4.2.0
 - Add endpoints API V2 - NOTA FISCAL ELETRÔNICA DE PRODUTO (NF-E)
 # 4.1.0

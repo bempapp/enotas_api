@@ -7,6 +7,7 @@ RSpec.describe EnotasApi::V2::NfeItem do
     { cfop: 'string',
       codigo: 'string',
       descricao: 'string',
+      descontos: 1.0,
       sku: 'string',
       ncm: 'string',
       cest: 'string',

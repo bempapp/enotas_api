@@ -9,6 +9,7 @@ module EnotasApi
       attributes cfop: :string,
                  codigo: :string,
                  descricao: :string,
+                 descontos: :decimal,
                  sku: :string,
                  ncm: :string,
                  cest: :string,
