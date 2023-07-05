@@ -15,7 +15,7 @@ module EnotasApi
                  consumidorFinal: :boolean,
                  enviarPorEmail: :boolean,
                  nfeReferenciada: NfeReferenciada,
-                 dataEmissao: :string,
+                 dataEmissao: :datetime,
                  cliente: NfeCliente,
                  itens: :array,
                  informacoesAdicionais: :string

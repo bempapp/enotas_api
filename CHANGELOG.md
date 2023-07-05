@@ -1,3 +1,5 @@
+# 4.2.2
+- Alter type dataEmissao in nfe
 # 4.2.1
 - Add descontos to nfe_item
 # 4.2.0
