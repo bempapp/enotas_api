@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    enotas_api (4.2.1)
+    enotas_api (4.2.3)
 
 GEM
   remote: https://rubygems.org/

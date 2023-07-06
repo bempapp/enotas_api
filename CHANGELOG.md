@@ -1,3 +1,6 @@
+# 4.2.3
+- Fix test nfe
+- Rename v2/consultar_nfs to v2/consultar_nf
 # 4.2.2
 - Alter type dataEmissao in nfe
 # 4.2.1

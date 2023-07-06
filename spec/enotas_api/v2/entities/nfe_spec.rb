@@ -12,7 +12,7 @@ RSpec.describe EnotasApi::V2::Nfe do
       consumidorFinal: true,
       enviarPorEmail: true,
       nfeReferenciada: { chaveAcesso: 'string' },
-      dataEmissao: 'string',
+      dataEmissao: DateTime.now,
       cliente: { endereco: { pais: 'Country',
                              uf: 'State',
                              cidade: 'City',
@@ -34,7 +34,9 @@ RSpec.describe EnotasApi::V2::Nfe do
   end
   let(:instance) { described_class.new(data) }
 
+  let(:json_data) { data.merge(dataEmissao: data[:dataEmissao].to_time.utc.iso8601) }
+
   it 'have expected attributes' do
-    expect(instance.to_json).to eq(data.to_json)
+    expect(instance.to_json).to eq(json_data.to_json)
   end
 end
