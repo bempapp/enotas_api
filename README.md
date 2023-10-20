@@ -1,3 +1,7 @@
+[![Gem Version](https://badge.fury.io/rb/enotas_api.svg)](https://badge.fury.io/rb/enotas_api)
+[![Maintainability](https://api.codeclimate.com/v1/badges/41c671eb551e1c6c7cf1/maintainability)](https://codeclimate.com/github/bempapp/enotas_api/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/41c671eb551e1c6c7cf1/test_coverage)](https://codeclimate.com/github/bempapp/enotas_api/test_coverage)
+
 # EnotasApi
 *enotas_api* é um cliente ruby para a [API](https://docs.enotasgw.com.br/reference) do [e-notas](https://enotas.com.br/).
 

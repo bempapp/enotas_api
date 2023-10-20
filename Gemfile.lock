@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    enotas_api (4.2.3)
+    enotas_api (4.3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -12,6 +12,7 @@ GEM
     crack (0.4.5)
       rexml
     diff-lcs (1.5.0)
+    docile (1.4.0)
     hashdiff (1.0.1)
     json (2.6.3)
     parallel (1.23.0)
@@ -56,6 +57,13 @@ GEM
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
     ruby-progressbar (1.13.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov-lcov (0.8.0)
+    simplecov_json_formatter (0.1.4)
     unicode-display_width (2.4.2)
     webmock (3.18.1)
       addressable (>= 2.8.0)
@@ -71,6 +79,8 @@ DEPENDENCIES
   rspec (~> 3.12)
   rubocop (~> 1.51)
   rubocop-rspec (~> 2.22)
+  simplecov (~> 0.22.0)
+  simplecov-lcov (~> 0.8.0)
   webmock (~> 3.18, >= 3.18.1)
 
 BUNDLED WITH

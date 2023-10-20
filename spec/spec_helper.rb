@@ -6,6 +6,16 @@ require 'webmock/rspec'
 require 'json'
 require 'bigdecimal'
 require 'date'
+require 'simplecov'
+require 'simplecov-lcov'
+
+SimpleCov::Formatter::LcovFormatter.config do |c|
+  c.output_directory = 'coverage'
+  c.lcov_file_name = 'lcov.info'
+  c.report_with_single_file = true
+end
+
+SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
