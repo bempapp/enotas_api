@@ -7,14 +7,9 @@ require 'json'
 require 'bigdecimal'
 require 'date'
 require 'simplecov'
-# require 'simplecov-lcov'
+require 'simplecov_json_formatter'
 
-#SimpleCov::Formatter::LcovFormatter.config do |c|
-#  c.output_directory = 'coverage'
-#  c.lcov_file_name = 'lcov.info'
-#  c.report_with_single_file = true
-#end
-
+SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
 SimpleCov.start
 
 RSpec.configure do |config|
