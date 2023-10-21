@@ -113,10 +113,10 @@ O suporte as novas APIs (V2) com suporte a NFC-e e NF-e estarão disponíveis em
     - [x] Consultar Empresa
     - [x] Listar Empresas
   - Nota Fiscal eletrônica de consumidor (NFC-e)
-    - [ ] Emitir Nota Fiscal
-    - [ ] Consultar Nota Fiscal
+    - [x] Emitir Nota Fiscal
+    - [x] Consultar Nota Fiscal
+    - [x] Cancelar Nota Fiscal
     - [ ] Consultar XML
-    - [ ] Cancelar Nota Fiscal
     - [ ] Consultar XML de Envio do Cancelamento
     - [ ] Consultar XML de Retorno do Cancelamento
     - [ ] Inutilizar Numeração

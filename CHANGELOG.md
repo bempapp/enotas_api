@@ -1,3 +1,5 @@
+# 4.3.0
+- Add endpoints API V2 - NOTA FISCAL ELETRÔNICA DE CONSUMIDOR (NFC-E)
 # 4.2.3
 - Fix test nfe
 - Rename v2/consultar_nfs to v2/consultar_nf

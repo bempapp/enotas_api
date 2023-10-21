@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+require 'simplecov_json_formatter'
+
 require 'bundler/setup'
 require 'enotas_api'
 require 'webmock/rspec'
 require 'json'
 require 'bigdecimal'
 require 'date'
-require 'simplecov'
-require 'simplecov_json_formatter'
-
-SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
-SimpleCov.start
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -27,4 +25,11 @@ RSpec.configure do |config|
   config.before do
     Singleton.__init__(EnotasApi::Configuration)
   end
+end
+
+SimpleCov.start do
+  formatter SimpleCov::Formatter::MultiFormatter.new([
+                                                       SimpleCov::Formatter::JSONFormatter,
+                                                       SimpleCov::Formatter::HTMLFormatter
+                                                     ])
 end
