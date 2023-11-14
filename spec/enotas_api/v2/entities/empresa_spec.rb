@@ -14,7 +14,8 @@ RSpec.describe EnotasApi::V2::Empresa do
       email: 'email',
       telefoneComercial: 'telefoneComercial',
       endereco: { cidade: 'City' },
-      emissaoNFeProduto: { ambienteHomologacao: { sequencialNFe: 123 } } }
+      emissaoNFeProduto: { ambienteHomologacao: { sequencialNFe: 123 } },
+      emissaoNFeConsumidor: { ambienteHomologacao: { sequencialNFe: 123, csc: { id: '123' } } } }
   end
   let(:instance) { described_class.new(data) }
 

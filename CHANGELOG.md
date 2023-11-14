@@ -1,3 +1,5 @@
+# 4.3.1
+- Add emissaoNFeConsumidor structure on v2/empresas
 # 4.3.0
 - Add endpoints API V2 - NOTA FISCAL ELETRÔNICA DE CONSUMIDOR (NFC-E)
 # 4.2.3

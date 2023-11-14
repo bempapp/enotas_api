@@ -3,6 +3,7 @@
 require_relative '../../common/entity'
 require_relative 'empresa_endereco'
 require_relative 'empresa_emissao_nfe_produto'
+require_relative 'empresa_emissao_nfe_consumidor'
 
 module EnotasApi
   module V2
@@ -17,7 +18,8 @@ module EnotasApi
                  email: :string,
                  telefoneComercial: :string,
                  endereco: EmpresaEndereco,
-                 emissaoNFeProduto: EmpresaEmissaoNfeProduto
+                 emissaoNFeProduto: EmpresaEmissaoNfeProduto,
+                 emissaoNFeConsumidor: EmpresaEmissaoNfeConsumidor
     end
   end
 end
