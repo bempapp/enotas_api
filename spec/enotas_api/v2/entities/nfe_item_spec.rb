@@ -40,7 +40,10 @@ RSpec.describe EnotasApi::V2::NfeItem do
                   ipi: { situacaoTributaria: 'string',
                          porAliquota: { aliquota: 0 },
                          porValor: { valorPorUnidade: 0 } } },
-      informacoesAdicionais: 'string' }
+      informacoesAdicionais: 'string',
+      ean: 'string',
+      eanTributavel: 'string'
+    }
   end
   let(:instance) { described_class.new(data) }
 

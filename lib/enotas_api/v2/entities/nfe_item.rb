@@ -18,7 +18,9 @@ module EnotasApi
                  valorUnitario: :decimal,
                  frete: :decimal,
                  impostos: NfeItemImpostos,
-                 informacoesAdicionais: :string
+                 informacoesAdicionais: :string,
+                 ean: :string,
+                 eanTributavel: :string
     end
   end
 end

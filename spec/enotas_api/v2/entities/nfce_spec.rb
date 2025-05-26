@@ -106,7 +106,9 @@ RSpec.describe EnotasApi::V2::Nfce do
               }
             }
           },
-          informacoesAdicionais: 'string'
+          informacoesAdicionais: 'string',
+          ean: 'string',
+          eanTributavel: 'string'
         }
       ],
       informacoesAdicionais: 'string'

@@ -16,7 +16,9 @@ module EnotasApi
                  unidadeMedida: :string,
                  valorUnitario: :decimal,
                  impostos: NfceItemImpostos,
-                 informacoesAdicionais: :string
+                 informacoesAdicionais: :string,
+                 ean: :string,
+                 eanTributavel: :string
     end
   end
 end
