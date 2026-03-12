@@ -1,3 +1,5 @@
+# 4.3.3
+- Add IbsCbs (classificacaoTributaria and codigoIndicadorOperacao) structure on v1/nfs-e
 # 4.3.2
 - Add ean and eanTributavel structure on v2/nf-e and v2/nfc-e
 # 4.3.1

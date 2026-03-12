@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../common/entity'
+require_relative 'nfs_servico_ibs_cbs'
 
 module EnotasApi
   module V1
@@ -19,7 +20,8 @@ module EnotasApi
                  valorCsll: :decimal,
                  valorInss: :decimal,
                  valorIr: :decimal,
-                 codigoInternoServicoMunicipal: :string
+                 codigoInternoServicoMunicipal: :string,
+                 ibsCbs: NfsServicoIbsCbs
     end
   end
 end

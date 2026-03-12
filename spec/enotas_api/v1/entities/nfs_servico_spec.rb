@@ -9,7 +9,8 @@ RSpec.describe EnotasApi::V1::NfsServico do
       descricao: 'descricao', aliquotaIss: 9.9, issRetidoFonte: true, cnae: 'cnae',
       codigoServicoMunicipio: 'codigoServicoMunicipio', descricaoServicoMunicipio: 'descricaoServicoMunicipio',
       itemListaServicoLC116: 'itemListaServicoLC116', codigoInternoServicoMunicipal: 'codigoInternoServicoMunicipal',
-      valorPis: 99, valorCofins: 99, valorCsll: 99, valorInss: 99, valorIr: 99
+      valorPis: 99, valorCofins: 99, valorCsll: 99, valorInss: 99, valorIr: 99,
+      ibsCbs: { classificacaoTributaria: '011003', codigoIndicadorOperacao: '030101' }
     }
   end
   let(:instance) { described_class.new(data) }

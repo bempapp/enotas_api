@@ -42,8 +42,7 @@ RSpec.describe EnotasApi::V2::NfeItem do
                          porValor: { valorPorUnidade: 0 } } },
       informacoesAdicionais: 'string',
       ean: 'string',
-      eanTributavel: 'string'
-    }
+      eanTributavel: 'string' }
   end
   let(:instance) { described_class.new(data) }
 
