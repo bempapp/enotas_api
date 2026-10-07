@@ -6,6 +6,7 @@ require_relative 'nfce_imposto_icms'
 require_relative 'nfce_imposto_pis'
 require_relative 'nfce_imposto_cofins'
 require_relative 'nfce_imposto_ipi'
+require_relative 'nfce_imposto_ibs_cbs'
 
 module EnotasApi
   module V2
@@ -14,7 +15,8 @@ module EnotasApi
                  icms: NfceImpostoIcms,
                  pis: NfceImpostoPis,
                  cofins: NfceImpostoCofins,
-                 ipi: NfceImpostoIpi
+                 ipi: NfceImpostoIpi,
+                 ibsCbs: NfceImpostoIbsCbs
     end
   end
 end

@@ -28,7 +28,16 @@ RSpec.describe EnotasApi::V2::NfceItemImpostos do
                 porValor: { valorPorUnidade: 0 } },
       ipi: { situacaoTributaria: 'string',
              porAliquota: { aliquota: 0 },
-             porValor: { valorPorUnidade: 0 } } }
+             porValor: { valorPorUnidade: 0 } },
+      ibsCbs: { situacaoTributaria: '000',
+                classificacaoTributaria: '000001',
+                ibs: { uf: { aliquota: 0.1,
+                             percentualDiferimento: 0,
+                             percentualReducaoAliquota: 60 },
+                       municipio: { aliquota: 0 } },
+                cbs: { aliquota: 0.9,
+                       percentualDiferimento: 0,
+                       percentualReducaoAliquota: 60 } } }
   end
   let(:instance) { described_class.new(data) }
 

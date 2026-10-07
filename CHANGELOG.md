@@ -1,3 +1,5 @@
+# 4.3.4
+- Add ibsCbs structure on v2/nfc-e items impostos
 # 4.3.3
 - Add IbsCbs (classificacaoTributaria and codigoIndicadorOperacao) structure on v1/nfs-e
 # 4.3.2
