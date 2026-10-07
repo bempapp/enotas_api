@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Ruby 3.2
       uses: ruby/setup-ruby@v1
       with:
@@ -28,7 +28,3 @@ jobs:
       run: bundle install
     - name: Run tests
       run: bundle exec rake
-    - name: Publish Coverage
-      uses: paambaati/codeclimate-action@v5.0.0
-      env:
-        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
